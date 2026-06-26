@@ -7,7 +7,7 @@ title: SQL Practice — Joins, Subqueries and CASE
 
 **Tool:** SQL Server · **Built:** June 2026
 
-[← Back to home](../index.md)
+[← Back to home](../)
 
 ## What this is
 

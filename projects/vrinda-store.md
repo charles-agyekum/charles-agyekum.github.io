@@ -8,7 +8,9 @@ title: Vrinda Store — 2022 Sales Dashboard
 **Tool:** Excel · **Dataset:** Vrinda Store, a sample fashion e-commerce dataset,
 31,047 orders · **Built:** May 2026
 
-[← Back to home](../index.md)
+[← Back to home](../)
+
+![Vrinda Store 2022 Sales dashboard, built in Excel](../assets/screenshots/vrinda.png)
 
 ## The question
 
@@ -45,7 +47,7 @@ Total revenue across 31,047 orders: ₹21,176,377.
 
 ## Findings
 
-Women drove 63% of 2022 revenue, concentrated in two womenswear categories, Set
+Women drove 64% of 2022 revenue, concentrated in two womenswear categories, Set
 and Kurta, and two states, Maharashtra and Karnataka. Amazon was the dominant
 channel at roughly a third of sales, with Flipkart and Myntra following. Both
 sales and order volume declined steadily through the year, peaking in March and

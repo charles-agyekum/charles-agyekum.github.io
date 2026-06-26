@@ -8,7 +8,9 @@ title: Superstore — Order Fulfilment and Profitability
 **Tool:** Power BI Desktop · **Dataset:** Global Superstore, 51,290 order lines,
 25,728 orders, 2022 to 2023 · **Built:** June 2026
 
-[← Back to home](../index.md)
+[← Back to home](../)
+
+![Superstore Order Fulfilment dashboard, built in Power BI](../assets/screenshots/superstore.png)
 
 ## The question
 

@@ -8,7 +8,9 @@ title: HR Employee Attrition — Dynamic Dashboard
 **Tool:** Excel · **Dataset:** IBM HR Employee Attrition (Kaggle) · **Built:**
 May to June 2026
 
-[← Back to home](../index.md)
+[← Back to home](../)
+
+![IBM HR Employee Attrition dashboard, built in Excel](../assets/screenshots/hr-attrition.png)
 
 ## The question
 

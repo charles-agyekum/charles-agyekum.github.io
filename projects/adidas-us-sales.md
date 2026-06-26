@@ -8,7 +8,9 @@ title: Adidas US — Interactive Sales Dashboard
 **Tool:** Excel · **Dataset:** Adidas US Sales, a sample dataset, 9,648 rows ·
 **Built:** May 2026
 
-[← Back to home](../index.md)
+[← Back to home](../)
+
+![Adidas US Interactive Sales dashboard, built in Excel](../assets/screenshots/adidas.png)
 
 ## The question
 
