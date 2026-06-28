@@ -10,7 +10,7 @@
 <meta property="og:title" content="Charles Agyekum — Data Analyst Portfolio">
 <meta property="og:description" content="Data analyst working in Excel, Power BI, SQL and Python. Clean first and prove it, verify every headline figure, then end on a recommendation a manager can act on.">
 <meta property="og:url" content="https://charles-agyekum.github.io/">
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMjMzODZBIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>html{scroll-behavior:smooth}body{margin:0}
 
@@ -38,7 +38,7 @@
 </style>
 </head>
 <body>
-<div id="ca-root" style="--acc-a:#23386A;--acc-b:#23386A;--acc-lt:#a9b8e0;--acc-glow:rgba(35,56,106,.24);--acc-glow2:rgba(35,56,106,.18);font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#171717;-webkit-font-smoothing:antialiased;">
+<div id="ca-root" style="--acc-a:#1F6B4F;--acc-b:#1F6B4F;--acc-lt:#8fd0bb;--acc-glow:rgba(31,107,79,.24);--acc-glow2:rgba(31,107,79,.18);font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#171717;-webkit-font-smoothing:antialiased;">
 
   <!-- utility bar -->
   <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
@@ -73,7 +73,7 @@
   <!-- hero -->
   <section style="position:relative;overflow:hidden;background:#08090d;color:#fff;">
     <div id="ca-hero-fx" style="position:absolute;inset:0;"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 82% 30%,var(--acc-glow,rgba(35,56,106,.24)),transparent 55%),radial-gradient(90% 90% at 10% 90%,var(--acc-glow2,rgba(35,56,106,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.35),rgba(8,9,13,.78));"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 82% 30%,var(--acc-glow,rgba(31,107,79,.24)),transparent 55%),radial-gradient(90% 90% at 10% 90%,var(--acc-glow2,rgba(31,107,79,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.35),rgba(8,9,13,.78));"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;padding:108px 32px 116px;">
       <div style="font:700 13px 'JetBrains Mono';letter-spacing:.22em;text-transform:uppercase;color:var(--acc-lt);animation:caFade .6s .05s forwards;">Excel · Power BI · SQL · Python</div>
       <h1 style="font:800 84px/.98 'Hanken Grotesk';letter-spacing:-.025em;margin:20px 0 0;max-width:15ch;animation:caFade .7s .1s forwards;">Analytics you can act on<span style="color:var(--acc-lt);">.</span></h1>
@@ -278,7 +278,7 @@
     var canvas=document.createElement('canvas'); canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
     wrap.appendChild(canvas); var ctx=canvas.getContext('2d');
     var DPR=Math.min(2,window.devicePixelRatio||1), w=0,h=0,nodes=[],raf=null,running=false;
-    var LINE=[35,56,106], DOT=[169,184,224];
+    var LINE=[31,107,79], DOT=[143,208,187];
     function resize(){ var r=wrap.getBoundingClientRect(); w=r.width;h=r.height; canvas.width=w*DPR;canvas.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
     function make(){ var n=Math.max(28,Math.min(64,Math.round(w/25))); nodes=[]; for(var i=0;i<n;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.27,vy:(Math.random()-.5)*.27,r:Math.random()*1.6+.6,m:Math.random()<.25}); }
     function draw(){ ctx.clearRect(0,0,w,h);
