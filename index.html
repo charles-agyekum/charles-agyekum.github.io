@@ -13,6 +13,8 @@
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>html{scroll-behavior:smooth}body{margin:0}
+.reveal-ready .reveal{opacity:0;transform:translateY(18px)}
+.reveal-ready .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 
 *{box-sizing:border-box;}
 @keyframes caFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -156,7 +158,7 @@
       </div>
 
       <!-- featured -->
-      <article class="ca-card" style="display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:#fff;border:1px solid #e6e6e2;margin:48px 0 0;overflow:hidden;">
+      <article class="ca-card reveal" style="display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:#fff;border:1px solid #e6e6e2;margin:48px 0 0;overflow:hidden;">
         <div class="ca-thumb" style="overflow:hidden;background:#fff;border-right:1px solid #e6e6e2;"><img src="assets/screenshots/dataco.png" alt="DataCo dashboard dashboard" loading="lazy" style="display:block;width:100%;height:100%;min-height:360px;object-fit:cover;object-position:top left;"></div>
         <div style="padding:42px 44px;display:flex;flex-direction:column;justify-content:center;">
           <div style="display:flex;align-items:center;gap:12px;"><span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-a);">Power BI · Flagship</span><span style="height:1px;flex:1;background:#e6e6e2;"></span></div>
@@ -169,7 +171,7 @@
       <!-- grid -->
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin:26px 0 0;">
 
-        <article class="ca-card" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
+        <article class="ca-card reveal" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
           <div class="ca-thumb" style="overflow:hidden;border-bottom:1px solid #e6e6e2;background:#fff;"><img src="assets/screenshots/superstore.png" alt="Superstore dashboard" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;object-position:top;"></div>
           <div style="padding:28px 30px;flex:1;display:flex;flex-direction:column;">
             <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-a);">Power BI · £12.6M · 11.6% margin</span>
@@ -179,7 +181,7 @@
           </div>
         </article>
 
-        <article class="ca-card" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
+        <article class="ca-card reveal" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
           <div class="ca-thumb" style="overflow:hidden;border-bottom:1px solid #e6e6e2;background:#fff;"><img src="assets/screenshots/vrinda.png" alt="Vrinda dashboard" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;object-position:top;"></div>
           <div style="padding:28px 30px;flex:1;display:flex;flex-direction:column;">
             <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-a);">Excel · 31,047 orders · 64% women</span>
@@ -189,7 +191,7 @@
           </div>
         </article>
 
-        <article class="ca-card" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
+        <article class="ca-card reveal" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
           <div class="ca-thumb" style="overflow:hidden;border-bottom:1px solid #e6e6e2;background:#fff;"><img src="assets/screenshots/hr-attrition.png" alt="HR attrition dashboard" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;object-position:top;"></div>
           <div style="padding:28px 30px;flex:1;display:flex;flex-direction:column;">
             <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-a);">Excel · 1,470 staff · 16.1% attrition</span>
@@ -199,7 +201,7 @@
           </div>
         </article>
 
-        <article class="ca-card" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
+        <article class="ca-card reveal" style="background:#fff;border:1px solid #e6e6e2;overflow:hidden;display:flex;flex-direction:column;">
           <div class="ca-thumb" style="overflow:hidden;border-bottom:1px solid #e6e6e2;background:#fff;"><img src="assets/screenshots/adidas.png" alt="Adidas dashboard" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;object-position:top;"></div>
           <div style="padding:28px 30px;flex:1;display:flex;flex-direction:column;">
             <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-a);">Excel · ~$900M · 72% from 3 retailers</span>
@@ -212,7 +214,7 @@
       </div>
 
       <!-- SQL black card -->
-      <article id="sql" class="ca-black" style="background:#0c0c0e;color:#fff;margin:26px 0 0;padding:46px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;overflow:hidden;">
+      <article id="sql" class="ca-black reveal" style="background:#0c0c0e;color:#fff;margin:26px 0 0;padding:46px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;overflow:hidden;">
         <div>
           <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-lt);">SQL · 31 worked problems</span>
           <h3 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.01em;margin:14px 0 12px;">SQL Practice — Joins, Subqueries &amp; CASE</h3>
@@ -232,13 +234,13 @@
       <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);">Get in touch</div>
       <h2 style="font:800 46px/1.05 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 40px;">Want the working files or a walkthrough<span style="color:var(--acc-b);">?</span></h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;">
-        <a href="https://charles-agyekum.github.io/projects/sql-practice.html" target="_blank" rel="noopener" class="ca-black" style="background:#0c0c0e;color:#fff;padding:40px 42px;text-decoration:none;display:flex;flex-direction:column;min-height:200px;">
+        <a href="https://charles-agyekum.github.io/projects/sql-practice.html" target="_blank" rel="noopener" class="ca-black reveal" style="background:#0c0c0e;color:#fff;padding:40px 42px;text-decoration:none;display:flex;flex-direction:column;min-height:200px;">
           <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-lt);">Practice</span>
           <h3 style="font:800 26px 'Hanken Grotesk';margin:14px 0 10px;">SQL practice — 31 drills</h3>
           <p style="font:400 15px/1.6 'Hanken Grotesk';color:#bcbcc4;margin:0 0 auto;max-width:40ch;">The full worked set with the reference cheat sheet behind the Power BI measures.</p>
           <span style="font:700 15px 'Hanken Grotesk';margin-top:22px;display:inline-flex;align-items:center;gap:10px;">Open the set <span class="ca-ar">→</span></span>
         </a>
-        <a href="mailto:agyekumcharles@outlook.com" class="ca-black" style="background:linear-gradient(120deg,var(--acc-a),var(--acc-b));color:#fff;padding:40px 42px;text-decoration:none;display:flex;flex-direction:column;min-height:200px;">
+        <a href="mailto:agyekumcharles@outlook.com" class="ca-black reveal" style="background:linear-gradient(120deg,var(--acc-a),var(--acc-b));color:#fff;padding:40px 42px;text-decoration:none;display:flex;flex-direction:column;min-height:200px;">
           <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78);">Contact</span>
           <h3 style="font:800 26px 'Hanken Grotesk';margin:14px 0 10px;">Email me</h3>
           <p style="font:400 15px/1.6 'Hanken Grotesk';color:rgba(255,255,255,.86);margin:0 0 auto;max-width:40ch;">Happy to share the workbooks, the .pbix files, or talk through how any figure was verified.</p>
@@ -264,21 +266,43 @@
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function countUp(){
-    var els=[].slice.call(document.querySelectorAll('[data-count]'));
+    var els=[].slice.call(document.querySelectorAll('[data-count],[data-countup]'));
     if(!els.length) return;
-    function fmt(el,n){ var r=Math.round(n); var pad=parseInt(el.getAttribute('data-pad')||'0',10); return pad?String(r).padStart(pad,'0'):r.toLocaleString('en-US'); }
+    function padFmt(n,pad){ var r=Math.round(n); return pad?String(r).padStart(pad,'0'):r.toLocaleString('en-US'); }
+    function parseNum(txt){
+      var m=txt.match(/^(.*?)(\d[\d,]*(?:\.\d+)?)(.*)$/); if(!m) return null;
+      var num=m[2], intRaw=num.split('.')[0];
+      return { prefix:m[1], suffix:m[3], target:parseFloat(num.replace(/,/g,'')),
+               dec:(num.split('.')[1]||'').length, comma:num.indexOf(',')>=0,
+               pad:/^0\d/.test(num)?intRaw.replace(/,/g,'').length:0 };
+    }
+    function fmtParsed(p,n){
+      var v=n.toFixed(p.dec), ip=v.split('.')[0], fp=p.dec?'.'+v.split('.')[1]:'';
+      if(p.comma) ip=parseInt(ip,10).toLocaleString('en-US');
+      else if(p.pad && ip.length<p.pad) ip=ip.padStart(p.pad,'0');
+      return p.prefix+ip+fp+p.suffix;
+    }
     function animate(el){
       if(el.dataset.done) return; el.dataset.done='1';
-      var target=parseFloat(el.getAttribute('data-count'));
-      if(reduce){ el.textContent=fmt(el,target); return; }
+      var f, target;
+      if(el.hasAttribute('data-count')){ target=parseFloat(el.getAttribute('data-count')); var pad=parseInt(el.getAttribute('data-pad')||'0',10); f=function(n){return padFmt(n,pad);}; }
+      else { var p=parseNum(el.textContent.trim()); if(!p) return; target=p.target; f=function(n){return fmtParsed(p,n);}; }
+      if(reduce){ el.textContent=f(target); return; }
       var dur=1600, t0=performance.now();
-      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=fmt(el,target*(1-Math.pow(1-t,3))); if(t<1) requestAnimationFrame(step); }
-      el.textContent=fmt(el,0); requestAnimationFrame(step);
+      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=f(target*(1-Math.pow(1-t,3))); if(t<1) requestAnimationFrame(step); }
+      el.textContent=f(0); requestAnimationFrame(step);
     }
     if('IntersectionObserver' in window){
       var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ animate(e.target); io.unobserve(e.target); } }); }, {threshold:0.45});
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(animate); }
+  }
+  function reveal(){
+    if(reduce || !('IntersectionObserver' in window)) return;
+    var els=[].slice.call(document.querySelectorAll('.reveal')); if(!els.length) return;
+    document.documentElement.classList.add('reveal-ready');
+    var ro=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }); }, {threshold:0.14});
+    els.forEach(function(el,i){ el.style.transitionDelay=((i%3)*80)+'ms'; ro.observe(el); });
   }
   function hero(){
     var wrap=document.getElementById('ca-hero-fx'); if(!wrap||reduce) return;
@@ -301,7 +325,7 @@
     if(!document.hidden) start();
     document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
   }
-  document.addEventListener('DOMContentLoaded',function(){ countUp(); hero(); });
+  document.addEventListener('DOMContentLoaded',function(){ countUp(); hero(); reveal(); });
 })();</script>
 </body>
 </html>
