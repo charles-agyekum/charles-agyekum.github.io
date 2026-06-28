@@ -18,6 +18,19 @@ act on, not a description of the chart.
 
 ## Selected work
 
+### [DataCo Smart Supply Chain — Late Delivery and OTIF (Power BI)](projects/dataco-late-delivery.html)
+
+[![DataCo late delivery and OTIF dashboard](assets/screenshots/dataco.png)](projects/dataco-late-delivery.html)
+
+The differentiated centrepiece, built on data most candidates do not use:
+180,519 supply-chain order lines. More than half of all orders broke their
+delivery promise, and it held flat near 55% for three years, so the problem is
+structural. The lever was shipping mode. First Class ran late 95% of the time
+against Standard's 38%, because it is sold as a one-day service but reliably
+takes two. A promise-setting problem, not a warehouse one. Recommendation:
+re-baseline the First Class lead time and de-risk the $2.14 million in profit
+tied to late orders.
+
 ### [Superstore — Order Fulfilment and Profitability (Power BI)](projects/superstore-fulfilment.html)
 
 [![Superstore Order Fulfilment dashboard](assets/screenshots/superstore.png)](projects/superstore-fulfilment.html)
@@ -61,11 +74,6 @@ partnership decision should focus.
 A worked set of 31 SQL questions covering joins, subqueries and CASE logic,
 with a reference cheat sheet. The grounding behind the measures in the Power BI
 work.
-
-### DataCo Smart Supply Chain — Late Delivery (Power BI) *(in progress)*
-The differentiated centrepiece, built on data most candidates do not use. Late
-delivery rate, on-time-in-full and profit-at-risk over roughly 180,000 rows.
-Going live this weekend.
 
 ---
 
