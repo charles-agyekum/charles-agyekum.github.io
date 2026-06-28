@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vrinda Store — 2022 Sales Dashboard — Charles Agyekum</title>
+<meta name="description" content="For the owner of an online fashion retailer: who buys, what they buy, where, through which channel, and how that changed across 2022 — to inform 2023 targets, inventory and channel">
+<meta name="author" content="Charles Agyekum">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vrinda Store — 2022 Sales Dashboard — Charles Agyekum">
+<meta property="og:description" content="For the owner of an online fashion retailer: who buys, what they buy, where, through which channel, and how that changed across 2022 — to inform 2023 targets, inventory and channel">
+<meta property="og:url" content="https://charles-agyekum.github.io/projects/vrinda-store.html">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMjMzODZBIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>html{scroll-behavior:smooth}body{margin:0}
+
+*{box-sizing:border-box;}
+@keyframes ppFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pp-cta{transition:transform .2s,box-shadow .25s;}
+.pp-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(226,0,26,.3);}
+.pp-cta:hover .pp-ar,.pp-link:hover .pp-ar{transform:translateX(5px);}
+.pp-ar{transition:transform .2s;display:inline-block;}
+.pp-ghost{transition:background .2s,color .2s;}
+.pp-ghost:hover{background:#fff !important;color:var(--acc-a) !important;border-color:#fff !important;}
+.pp-ghost:hover .pp-ar{transform:translateX(4px);}
+.pp-ghost span{white-space:nowrap;}
+.pp-link{transition:color .18s;}
+.pp-nav a{transition:color .18s;}
+.pp-nav a:hover{color:var(--acc-a);}
+.pp-skill{transition:border-color .2s,color .2s;}
+.pp-skill:hover{border-color:var(--acc-a);color:var(--acc-a);}
+</style>
+</head>
+<body>
+<div id="pp-root" style="--acc-a:#23386A;--acc-b:#23386A;--acc-lt:#a9b8e0;--acc-glow:rgba(35,56,106,.24);--acc-glow2:rgba(35,56,106,.18);font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#171717;-webkit-font-smoothing:antialiased;">
+
+  <!-- utility bar -->
+  <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
+      <span>Data analyst — Excel · Power BI · SQL · Python</span>
+      <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header style="background:#fff;border-bottom:1px solid #e7e7e7;">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="https://charles-agyekum.github.io/" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+        <div style="width:50px;height:50px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 19px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div>
+          <div style="font:800 18px 'Hanken Grotesk';letter-spacing:-.01em;line-height:1;">Charles Agyekum</div>
+          <div style="font:600 12px 'Hanken Grotesk';color:#8a8a8a;margin-top:3px;">Data analyst · Portfolio 2026</div>
+        </div>
+      </a>
+      <a href="https://charles-agyekum.github.io/" class="pp-link" style="font:700 14px 'Hanken Grotesk';color:#171717;text-decoration:none;display:inline-flex;align-items:center;gap:9px;"><span class="pp-ar" style="transform:rotate(180deg);">→</span> All work</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="position:relative;overflow:hidden;background:#08090d;color:#fff;">
+    <div id="pp-hero-fx" style="position:absolute;inset:0;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow,rgba(35,56,106,.24)),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2,rgba(35,56,106,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">Excel · Sales dashboard</div>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;max-width:18ch;animation:ppFade .7s .1s forwards;">Vrinda Store — 2022 Sales Dashboard<span style="color:var(--acc-lt);">.</span></h1>
+      <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
+        <span><span style="color:var(--acc-lt);">Tool</span> &nbsp;Excel</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Dataset</span> &nbsp;Vrinda Store — sample fashion e-commerce, 31,047 orders (2022)</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Built</span> &nbsp;May 2026</span>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 0;animation:ppFade .7s .26s forwards;">
+        <a href="https://charles-agyekum.github.io/projects/vrinda-store.html" target="_blank" rel="noopener" class="pp-cta" style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 15px 'Hanken Grotesk';padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:11px;">Open live page <span class="pp-ar">↗</span></a>
+        <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.4);color:#fff;font:700 15px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:14px 24px;display:flex;align-items:center;">Back to all work</span><span style="padding:14px 18px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- artifact -->
+  <section style="background:#101116;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      
+        <div style="transform:translateY(-34px);border:1px solid #2a2c34;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#fff;overflow:hidden;">
+          <img src="https://charles-agyekum.github.io/assets/screenshots/vrinda.png" alt="Vrinda Store — 2022 Sales Dashboard dashboard" style="display:block;width:100%;height:auto" loading="lazy">
+        </div>
+        <div style="margin:-18px 0 28px;font:600 13px 'JetBrains Mono';color:#7e828d;text-align:center;">Vrinda Store 2022 sales dashboard — built in Excel</div>
+      
+      
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <section style="background:#fff;border-bottom:1px solid #eee;">
+    <div style="max-width:1200px;margin:0 auto;padding:30px 32px 40px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);margin-bottom:20px;">Verified headline numbers</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e9e9e5;border:1px solid #e9e9e5;">
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">₹21.18M</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Total revenue (31,047 orders)</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">64%</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Revenue from women</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">7</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Data-quality issues caught</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">~⅓</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Sales via Amazon (top channel)</div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- body -->
+  <section style="background:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:54px 32px 80px;display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start;">
+
+      <!-- main -->
+      <div style="min-width:0;">
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:0 0 14px;">The question</h2>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">For the owner of an online fashion retailer: who buys, what they buy, where, through which channel, and how that changed across 2022 — to inform 2023 targets, inventory and channel spend.</p>
+        
+
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">What I built</h2>
+        <ol style="margin:0;padding:0;list-style:none;counter-reset:step;">
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">1</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">QA first.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">A =UNIQUE() pass on every categorical column before building anything — surfacing seven data-quality issues (see below).</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">2</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Charts.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Five pivot-driven charts answering the six brief questions, with three slicers (Month, Channel, Category) wired through Report Connections.</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">3</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Deliberate disconnect.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">The Month slicer is intentionally not connected to the trend chart, so the twelve-month trend stays intact while the categorical charts filter.</span>
+            </li>
+          
+        </ol>
+
+        
+          <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Cleaning first</h2>
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 18px;">I ran a =UNIQUE() pass on every categorical column before building anything. That surfaced seven data-quality issues — the quantity column spelling out “One” and “Two” as text is the trap most people miss: it looks fine and silently breaks every total.</p>
+          <div style="border:1px solid #e6e6e2;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;background:#0c0c0e;color:#fff;font:700 12px 'Hanken Grotesk';letter-spacing:.06em;text-transform:uppercase;">
+              <div style="padding:12px 16px;">Issue</div><div style="padding:12px 16px;">Where</div><div style="padding:12px 16px;">Fix</div><div style="padding:12px 16px;">Why it mattered</div>
+            </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Trailing space in header</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">Channel </div><div style="padding:12px 16px;">Retyped</div><div style="padding:12px 16px;">Broke pivot &amp; slicer field matching</div>
+              </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Abbreviations</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">Gender: W / M</div><div style="padding:12px 16px;">IF-recode to Women / Men</div><div style="padding:12px 16px;">Would split each chart into four bars</div>
+              </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Text-as-number</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">Qty: “One”, “Two”</div><div style="padding:12px 16px;">IF-recode to 1 / 2</div><div style="padding:12px 16px;">Text will not SUM, so totals break</div>
+              </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Mixed case</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">kurta lowercase</div><div style="padding:12px 16px;">PROPER</div><div style="padding:12px 16px;">Looked unprofessional</div>
+              </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Case inconsistency</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">ship-state spellings</div><div style="padding:12px 16px;">PROPER</div><div style="padding:12px 16px;">Tidy grouping</div>
+              </div>
+            
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Hidden space confirmed</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">header</div><div style="padding:12px 16px;">=LEN()−LEN(TRIM())</div><div style="padding:12px 16px;">Proved the space before fixing it</div>
+              </div>
+            
+          </div>
+        
+
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Findings &amp; recommendation</h2>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">Women drove 64% of 2022 revenue, concentrated in two womenswear categories (Set and Kurta) and two states (Maharashtra and Karnataka). Amazon was the dominant channel at roughly a third of sales, with Flipkart and Myntra following.</p>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">Both sales and order volume declined steadily through the year, peaking in March and bottoming in December.</p>
+        
+
+        <!-- recommendation callout -->
+        <div style="margin:26px 0 0;border-left:4px solid var(--acc-a);background:linear-gradient(100deg,rgba(39,66,230,.05),rgba(124,58,237,.06));padding:26px 30px;">
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);margin-bottom:9px;">Risk to watch</div>
+          <p style="font:600 19px/1.55 'Hanken Grotesk';color:#1a1a1a;margin:0;">With revenue leaning on one state, one channel and one customer segment, I would flag that dependence as the risk to watch before setting 2023 targets.</p>
+        </div>
+
+        
+      </div>
+
+      <!-- sidebar -->
+      <aside style="position:sticky;top:24px;">
+        <div style="border:1px solid #e6e6e2;background:#f8f8f6;padding:26px 26px;">
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--acc-a);">At a glance</div>
+          <div style="margin:16px 0 0;display:flex;flex-direction:column;gap:14px;">
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Tool</div><div style="font:700 16px 'Hanken Grotesk';color:#171717;margin-top:2px;">Excel</div></div>
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Dataset</div><div style="font:500 15px/1.4 'Hanken Grotesk';color:#3f3f3f;margin-top:2px;">Vrinda Store — sample fashion e-commerce, 31,047 orders (2022)</div></div>
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Built</div><div style="font:700 16px 'Hanken Grotesk';color:#171717;margin-top:2px;">May 2026</div></div>
+          </div>
+          <div style="height:1px;background:#e6e6e2;margin:22px 0;"></div>
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--acc-a);margin-bottom:14px;">Skills</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">TRIM / PROPER / IF-recode</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">UNIQUE-based QA</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">PivotTables</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Combo charts (secondary axis)</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Top-N filters</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Slicers + Report Connections</span>
+            
+          </div>
+          <a href="https://charles-agyekum.github.io/projects/vrinda-store.html" target="_blank" rel="noopener" class="pp-cta" style="margin-top:22px;background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 14px 'Hanken Grotesk';padding:13px 18px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;">Open live page <span class="pp-ar">↗</span></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- closing -->
+  <section style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:34px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="font:700 26px 'Hanken Grotesk';letter-spacing:-.01em;">Every headline figure on this page is verified against source.</div>
+      <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.7);color:#fff;font:700 14px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:13px 22px;display:flex;align-items:center;">Explore more work</span><span style="padding:13px 16px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#101116;color:#cfd2da;">
+    <div style="max-width:1200px;margin:0 auto;padding:42px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:40px;height:40px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 15px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
+      </div>
+      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:60ch;">Public learning datasets unless stated. Figures verified against source. Built as part of a structured analytics programme, 2026.</div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(){
+    var els = [].slice.call(document.querySelectorAll('[data-count]'));
+    els.forEach(function(el){
+      var target = parseFloat(el.getAttribute('data-count'));
+      if(reduce){ el.textContent = Math.round(target).toLocaleString('en-US'); return; }
+      var dur=1500, t0=performance.now();
+      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=Math.round(target*(1-Math.pow(1-t,3))).toLocaleString('en-US'); if(t<1) requestAnimationFrame(step); }
+      el.textContent='0'; requestAnimationFrame(step);
+    });
+  }
+  function hero(){
+    var wrap=document.getElementById('pp-hero-fx'); if(!wrap||reduce) return;
+    var canvas=document.createElement('canvas'); canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
+    wrap.appendChild(canvas); var ctx=canvas.getContext('2d');
+    var DPR=Math.min(2,window.devicePixelRatio||1), w=0,h=0,nodes=[],raf=null,running=false;
+    var LINE=[35,56,106], DOT=[169,184,224];
+    function resize(){ var r=wrap.getBoundingClientRect(); w=r.width;h=r.height; canvas.width=w*DPR;canvas.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+    function make(){ var n=Math.max(28,Math.min(64,Math.round(w/25))); nodes=[]; for(var i=0;i<n;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.27,vy:(Math.random()-.5)*.27,r:Math.random()*1.6+.6,m:Math.random()<.25}); }
+    function draw(){ ctx.clearRect(0,0,w,h);
+      for(var k=0;k<nodes.length;k++){ var p=nodes[k]; p.x+=p.vx;p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+      for(var i=0;i<nodes.length;i++) for(var j=i+1;j<nodes.length;j++){ var a=nodes[i],b=nodes[j]; var d=Math.hypot(a.x-b.x,a.y-b.y); if(d<117){ ctx.strokeStyle='rgba('+LINE+','+(0.18*(1-d/117))+')'; ctx.lineWidth=1; ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke(); } }
+      for(var m=0;m<nodes.length;m++){ var q=nodes[m]; ctx.fillStyle=q.m?'rgba('+DOT+',.9)':'rgba(255,255,255,.5)'; ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,7);ctx.fill(); }
+      raf=requestAnimationFrame(draw);
+    }
+    function start(){ if(running)return; running=true; draw(); }
+    function stop(){ running=false; if(raf)cancelAnimationFrame(raf); }
+    resize(); make();
+    window.addEventListener('resize',function(){ resize(); make(); });
+    if(!document.hidden) start();
+    document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){ countUp(); hero(); });
+})();</script>
+</body>
+</html>

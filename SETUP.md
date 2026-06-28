@@ -1,26 +1,41 @@
-# SETUP — publish this site on GitHub Pages
+# SETUP — GitHub Pages
 
-Account done. Username: **charles-agyekum**. Your site will go live at:
-
-**https://charles-agyekum.github.io**
-
-Everything in this folder is pre-filled for that username. Work top to bottom.
+The site is **already live** at **https://charles-agyekum.github.io** (username
+`charles-agyekum`, repo `charles-agyekum.github.io`, branch `main`). This file is
+kept as a reference. For day-to-day changes you only need the "Updating" steps below.
 
 ---
 
-## Step 1 — Create the repository
+## Updating the site (the normal case)
 
-1. Click the **+** top right, then **New repository**.
-2. Repository name: type it **exactly** as `charles-agyekum.github.io`. GitHub will
-   show a note confirming it recognises this as a Pages site. That note is how you
-   know the name is right.
-3. Set it to **Public**.
-4. Do **not** tick "Add a README" (this folder already has one).
-5. Click **Create repository**.
+Open a terminal **inside this `Portfolio_Site` folder** and run:
 
-## Step 2 — Push the files
+```bash
+git add -A
+git commit -m "Describe the change"
+git push
+```
 
-Open a terminal **inside this `Portfolio_Site` folder** and run these in order.
+GitHub Pages redeploys automatically within a minute or two. Refresh
+`https://charles-agyekum.github.io` to see it.
+
+If git asks you to sign in, use your GitHub username (`charles-agyekum`) and a
+**personal access token** as the password (not your account password). Create one at:
+GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) →
+Generate new token, tick the `repo` scope, copy it, and paste it when prompted.
+
+## Pages configuration (already set, for reference)
+
+- Repo **Settings → Pages → Build and deployment**
+- Source: **Deploy from a branch**
+- Branch: **main**, folder: **/ (root)**
+
+This site is plain HTML, so a `.nojekyll` file tells Pages to serve the files as-is
+without trying to run a Jekyll build. Leave that file in place.
+
+## One-time setup (already done)
+
+Recorded here only in case the repo is ever recreated from scratch:
 
 ```bash
 git init
@@ -31,42 +46,10 @@ git remote add origin https://github.com/charles-agyekum/charles-agyekum.github.
 git push -u origin main
 ```
 
-If git asks you to sign in, use your GitHub username (`charles-agyekum`) and a
-**personal access token** as the password (GitHub no longer accepts your account
-password here). Create one at: GitHub → Settings → Developer settings → Personal
-access tokens → Tokens (classic) → Generate new token, tick the `repo` scope, copy
-it, and paste it when prompted.
-
-> No git installed? Download it from https://git-scm.com/download/win, accept the
-> defaults, then reopen the terminal and run the commands above. If you would
-> rather avoid the command line entirely, tell me and I will write you the
-> GitHub Desktop (point-and-click) version instead.
-
-## Step 3 — Turn on Pages
-
-1. In the repo, go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Branch: **main**, folder: **/ (root)**. Save.
-4. Wait one to two minutes. The page will show your live URL:
-   `https://charles-agyekum.github.io`.
-
-## Step 4 — Check it
-
-Open `https://charles-agyekum.github.io`. You should see the landing page with the
-six project links. Click into one to confirm the project pages load.
-
-Done means: repo created, files pushed, Pages on, live URL working. Tell me when it
-is live and I will log it to PROGRESS.md and move the Command Center bar.
-
----
-
 ## Optional, when you want it
 
-- **Add the workbook files for download.** The `.xlsx` and `.pbix` files are large
-  and are not copied in yet. If you want visitors to download them, copy the files
-  into `assets/files/` and I will wire the links. (The `.gitignore` ignores raw
-  `.csv` on purpose, so source data is referenced, not republished.)
-- **DataCo page.** Once Saturday's build is done, I will add its project page and
-  link it on the homepage. That is the differentiated centrepiece.
-- **Contact details.** Add your email and LinkedIn in `_config.yml` and I will
-  surface them on the landing page.
+- **Add the workbook files for download.** The `.xlsx` and `.pbix` files are large and
+  not in the repo. To let visitors download them, drop the files into `assets/files/`
+  and add a link on the relevant project page.
+- **Contact details.** The contact email on the landing page is set in `index.html`
+  (search for `mailto:`). Update it there if it changes.

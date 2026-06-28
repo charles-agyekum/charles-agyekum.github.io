@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superstore — Order Fulfilment &amp; Profitability — Charles Agyekum</title>
+<meta name="description" content="The Head of Operations and the Commercial Director want to know how fast orders are fulfilled, whether the priority and ship-mode system works, where margin is leaking, which lines">
+<meta name="author" content="Charles Agyekum">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Superstore — Order Fulfilment &amp; Profitability — Charles Agyekum">
+<meta property="og:description" content="The Head of Operations and the Commercial Director want to know how fast orders are fulfilled, whether the priority and ship-mode system works, where margin is leaking, which lines">
+<meta property="og:url" content="https://charles-agyekum.github.io/projects/superstore-fulfilment.html">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMjMzODZBIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>html{scroll-behavior:smooth}body{margin:0}
+
+*{box-sizing:border-box;}
+@keyframes ppFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pp-cta{transition:transform .2s,box-shadow .25s;}
+.pp-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(226,0,26,.3);}
+.pp-cta:hover .pp-ar,.pp-link:hover .pp-ar{transform:translateX(5px);}
+.pp-ar{transition:transform .2s;display:inline-block;}
+.pp-ghost{transition:background .2s,color .2s;}
+.pp-ghost:hover{background:#fff !important;color:var(--acc-a) !important;border-color:#fff !important;}
+.pp-ghost:hover .pp-ar{transform:translateX(4px);}
+.pp-ghost span{white-space:nowrap;}
+.pp-link{transition:color .18s;}
+.pp-nav a{transition:color .18s;}
+.pp-nav a:hover{color:var(--acc-a);}
+.pp-skill{transition:border-color .2s,color .2s;}
+.pp-skill:hover{border-color:var(--acc-a);color:var(--acc-a);}
+</style>
+</head>
+<body>
+<div id="pp-root" style="--acc-a:#23386A;--acc-b:#23386A;--acc-lt:#a9b8e0;--acc-glow:rgba(35,56,106,.24);--acc-glow2:rgba(35,56,106,.18);font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#171717;-webkit-font-smoothing:antialiased;">
+
+  <!-- utility bar -->
+  <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
+      <span>Data analyst — Excel · Power BI · SQL · Python</span>
+      <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header style="background:#fff;border-bottom:1px solid #e7e7e7;">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="https://charles-agyekum.github.io/" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+        <div style="width:50px;height:50px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 19px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div>
+          <div style="font:800 18px 'Hanken Grotesk';letter-spacing:-.01em;line-height:1;">Charles Agyekum</div>
+          <div style="font:600 12px 'Hanken Grotesk';color:#8a8a8a;margin-top:3px;">Data analyst · Portfolio 2026</div>
+        </div>
+      </a>
+      <a href="https://charles-agyekum.github.io/" class="pp-link" style="font:700 14px 'Hanken Grotesk';color:#171717;text-decoration:none;display:inline-flex;align-items:center;gap:9px;"><span class="pp-ar" style="transform:rotate(180deg);">→</span> All work</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="position:relative;overflow:hidden;background:#08090d;color:#fff;">
+    <div id="pp-hero-fx" style="position:absolute;inset:0;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow,rgba(35,56,106,.24)),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2,rgba(35,56,106,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">Power BI · Toolchain proof</div>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;max-width:18ch;animation:ppFade .7s .1s forwards;">Superstore — Order Fulfilment &amp; Profitability<span style="color:var(--acc-lt);">.</span></h1>
+      <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
+        <span><span style="color:var(--acc-lt);">Tool</span> &nbsp;Power BI Desktop</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Dataset</span> &nbsp;Global Superstore — 51,290 order lines, 25,728 orders (2022–2023)</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Built</span> &nbsp;June 2026</span>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 0;animation:ppFade .7s .26s forwards;">
+        <a href="https://charles-agyekum.github.io/projects/superstore-fulfilment.html" target="_blank" rel="noopener" class="pp-cta" style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 15px 'Hanken Grotesk';padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:11px;">Open live page <span class="pp-ar">↗</span></a>
+        <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.4);color:#fff;font:700 15px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:14px 24px;display:flex;align-items:center;">Back to all work</span><span style="padding:14px 18px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- artifact -->
+  <section style="background:#101116;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      
+        <div style="transform:translateY(-34px);border:1px solid #2a2c34;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#fff;overflow:hidden;">
+          <img src="https://charles-agyekum.github.io/assets/screenshots/superstore.png" alt="Superstore — Order Fulfilment &amp; Profitability dashboard" style="display:block;width:100%;height:auto" loading="lazy">
+        </div>
+        <div style="margin:-18px 0 28px;font:600 13px 'JetBrains Mono';color:#7e828d;text-align:center;">Global Superstore fulfilment &amp; profitability dashboard — built in Power BI</div>
+      
+      
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <section style="background:#fff;border-bottom:1px solid #eee;">
+    <div style="max-width:1200px;margin:0 auto;padding:30px 32px 40px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);margin-bottom:20px;">Verified headline numbers</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e9e9e5;border:1px solid #e9e9e5;">
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">£12.64M</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Total sales</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">£1.47M</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Total profit</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">11.61%</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Profit margin</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">25,728</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Order count</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">3.97</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Avg fulfilment days</div>
+          </div>
+        
+          <div style="background:#fff;padding:22px 22px;">
+            <div style="font:800 30px 'Hanken Grotesk';letter-spacing:-.02em;color:#111;">4.19%</div>
+            <div style="font:600 13px 'Hanken Grotesk';color:#7a7a7a;margin-top:5px;">Return rate (1,079 orders)</div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- body -->
+  <section style="background:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:54px 32px 80px;display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start;">
+
+      <!-- main -->
+      <div style="min-width:0;">
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:0 0 14px;">The question</h2>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">The Head of Operations and the Commercial Director want to know how fast orders are fulfilled, whether the priority and ship-mode system works, where margin is leaking, which lines drive or drain profit, and which markets are strong or weak.</p>
+        
+
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">What I built</h2>
+        <ol style="margin:0;padding:0;list-style:none;counter-reset:step;">
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">1</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Get Data.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Loaded Orders and Returns from Excel.</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">2</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Power Query (ETL).</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Promoted headers (Returns had them trapped in row 1), set date and decimal types, and added Fulfilment Days = Ship Date − Order Date.</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">3</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Model.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Returns (1) to Orders (many) on Order ID, cross-filter set to Both so returns respond to slicers.</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">4</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">DAX.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Seven measures — Total Sales, Total Profit, Profit Margin % (DIVIDE), Order Count (DISTINCTCOUNT), Avg Fulfilment Days, Shipping Cost % of Sales, and Return Rate across the two tables.</span>
+            </li>
+          
+            <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
+              <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">5</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Visuals &amp; narrative.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">Seven KPI cards, fulfilment by ship mode, a sales-and-profit trend, a discount-vs-profit scatter, profit by sub-category, a country map and a Market slicer — with interpret-not-describe titles and a findings panel.</span>
+            </li>
+          
+        </ol>
+
+        
+
+        <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Findings &amp; recommendation</h2>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">Fulfilment is healthy and uniform — around four days across every market, with ship tiers behaving as named. There is no regional weak spot.</p>
+        
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">Sales are strong but margin is thin (11.6% on £12.6M); the pressure point is profitability, not volume. The leak is one sub-category: Tables sells at a 29% average discount and loses £64,083 — the only major loss-making line. Confirmed from two independent visuals, the sorted profit bar and the discount-profit scatter.</p>
+        
+
+        <!-- recommendation callout -->
+        <div style="margin:26px 0 0;border-left:4px solid var(--acc-a);background:linear-gradient(100deg,rgba(39,66,230,.05),rgba(124,58,237,.06));padding:26px 30px;">
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);margin-bottom:9px;">Recommendation</div>
+          <p style="font:600 19px/1.55 'Hanken Grotesk';color:#1a1a1a;margin:0;">Cap or review discounting on Tables and monitor other high-discount lines to protect margin. Fulfilment needs no intervention.</p>
+        </div>
+
+        
+          <h3 style="font:800 22px 'Hanken Grotesk';margin:40px 0 10px;">A note on honesty</h3>
+          <p style="font:400 17px/1.65 'Hanken Grotesk';color:#4a4a4a;margin:0;">Superstore is the most over-used dataset in analytics, so this build proves the toolchain rather than acting as the centrepiece — that is the DataCo supply-chain build. I would rather show a generic dataset handled correctly than dress it up as something rare.</p>
+        
+      </div>
+
+      <!-- sidebar -->
+      <aside style="position:sticky;top:24px;">
+        <div style="border:1px solid #e6e6e2;background:#f8f8f6;padding:26px 26px;">
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--acc-a);">At a glance</div>
+          <div style="margin:16px 0 0;display:flex;flex-direction:column;gap:14px;">
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Tool</div><div style="font:700 16px 'Hanken Grotesk';color:#171717;margin-top:2px;">Power BI Desktop</div></div>
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Dataset</div><div style="font:500 15px/1.4 'Hanken Grotesk';color:#3f3f3f;margin-top:2px;">Global Superstore — 51,290 order lines, 25,728 orders (2022–2023)</div></div>
+            <div><div style="font:700 12px 'Hanken Grotesk';color:#9a9a9a;text-transform:uppercase;letter-spacing:.05em;">Built</div><div style="font:700 16px 'Hanken Grotesk';color:#171717;margin-top:2px;">June 2026</div></div>
+          </div>
+          <div style="height:1px;background:#e6e6e2;margin:22px 0;"></div>
+          <div style="font:700 12px 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--acc-a);margin-bottom:14px;">Skills</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Power Query ETL</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Calculated columns (M)</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Star schema</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Cross-filter direction</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Seven DAX measures</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Scatter + map</span>
+            
+              <span class="pp-skill" style="font:600 13px 'Hanken Grotesk';color:#444;border:1px solid #dcdcd6;padding:6px 11px;background:#fff;white-space:nowrap;">Source-verified figures</span>
+            
+          </div>
+          <a href="https://charles-agyekum.github.io/projects/superstore-fulfilment.html" target="_blank" rel="noopener" class="pp-cta" style="margin-top:22px;background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 14px 'Hanken Grotesk';padding:13px 18px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;">Open live page <span class="pp-ar">↗</span></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- closing -->
+  <section style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:34px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="font:700 26px 'Hanken Grotesk';letter-spacing:-.01em;">Every headline figure on this page is verified against source.</div>
+      <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.7);color:#fff;font:700 14px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:13px 22px;display:flex;align-items:center;">Explore more work</span><span style="padding:13px 16px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#101116;color:#cfd2da;">
+    <div style="max-width:1200px;margin:0 auto;padding:42px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:40px;height:40px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 15px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
+      </div>
+      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:60ch;">Public learning datasets unless stated. Figures verified against source. Built as part of a structured analytics programme, 2026.</div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(){
+    var els = [].slice.call(document.querySelectorAll('[data-count]'));
+    els.forEach(function(el){
+      var target = parseFloat(el.getAttribute('data-count'));
+      if(reduce){ el.textContent = Math.round(target).toLocaleString('en-US'); return; }
+      var dur=1500, t0=performance.now();
+      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=Math.round(target*(1-Math.pow(1-t,3))).toLocaleString('en-US'); if(t<1) requestAnimationFrame(step); }
+      el.textContent='0'; requestAnimationFrame(step);
+    });
+  }
+  function hero(){
+    var wrap=document.getElementById('pp-hero-fx'); if(!wrap||reduce) return;
+    var canvas=document.createElement('canvas'); canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
+    wrap.appendChild(canvas); var ctx=canvas.getContext('2d');
+    var DPR=Math.min(2,window.devicePixelRatio||1), w=0,h=0,nodes=[],raf=null,running=false;
+    var LINE=[35,56,106], DOT=[169,184,224];
+    function resize(){ var r=wrap.getBoundingClientRect(); w=r.width;h=r.height; canvas.width=w*DPR;canvas.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+    function make(){ var n=Math.max(28,Math.min(64,Math.round(w/25))); nodes=[]; for(var i=0;i<n;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.27,vy:(Math.random()-.5)*.27,r:Math.random()*1.6+.6,m:Math.random()<.25}); }
+    function draw(){ ctx.clearRect(0,0,w,h);
+      for(var k=0;k<nodes.length;k++){ var p=nodes[k]; p.x+=p.vx;p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+      for(var i=0;i<nodes.length;i++) for(var j=i+1;j<nodes.length;j++){ var a=nodes[i],b=nodes[j]; var d=Math.hypot(a.x-b.x,a.y-b.y); if(d<117){ ctx.strokeStyle='rgba('+LINE+','+(0.18*(1-d/117))+')'; ctx.lineWidth=1; ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke(); } }
+      for(var m=0;m<nodes.length;m++){ var q=nodes[m]; ctx.fillStyle=q.m?'rgba('+DOT+',.9)':'rgba(255,255,255,.5)'; ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,7);ctx.fill(); }
+      raf=requestAnimationFrame(draw);
+    }
+    function start(){ if(running)return; running=true; draw(); }
+    function stop(){ running=false; if(raf)cancelAnimationFrame(raf); }
+    resize(); make();
+    window.addEventListener('resize',function(){ resize(); make(); });
+    if(!document.hidden) start();
+    document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){ countUp(); hero(); });
+})();</script>
+</body>
+</html>
