@@ -96,7 +96,7 @@
         <div style="font:700 12px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:#8b8f9c;margin-top:6px;">Rows analysed</div>
       </div>
       <div style="padding:34px 8px 34px 30px;border-right:1px solid rgba(255,255,255,.1);">
-        <div style="font:800 40px 'Hanken Grotesk';letter-spacing:-.02em;" data-count="6" data-pad="2">06</div>
+        <div style="font:800 40px 'Hanken Grotesk';letter-spacing:-.02em;" data-count="7" data-pad="2">07</div>
         <div style="font:700 12px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:#8b8f9c;margin-top:6px;">Projects</div>
       </div>
       <div style="padding:34px 8px 34px 30px;border-right:1px solid rgba(255,255,255,.1);">
@@ -152,7 +152,7 @@
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;">
         <div>
           <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);">Selected work</div>
-          <h2 style="font:800 46px/1.05 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 0;">Six pieces, each verified<span style="color:var(--acc-b);">.</span></h2>
+          <h2 style="font:800 46px/1.05 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 0;">Seven pieces, each verified<span style="color:var(--acc-b);">.</span></h2>
         </div>
         <div style="font:600 15px 'Hanken Grotesk';color:#7a7a7a;max-width:34ch;">Public learning datasets unless stated. Figures reconciled to source.</div>
       </div>
@@ -212,6 +212,19 @@
         </article>
 
       </div>
+
+      <!-- Python black card -->
+      <article id="python" class="ca-black reveal" style="background:#0c0c0e;color:#fff;margin:26px 0 0;padding:46px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;overflow:hidden;">
+        <div>
+          <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-lt);">Python · pandas · 180,519 orders</span>
+          <h3 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.01em;margin:14px 0 12px;">DataCo Late Delivery — rebuilt in pandas</h3>
+          <p style="font:400 16px/1.62 'Hanken Grotesk';color:#bcbcc4;margin:0 0 22px;max-width:54ch;">The same supply-chain finding as the flagship dashboard, taken back to raw data in Python. I derived “late” from the shipping dates myself instead of trusting the vendor’s label — and the raw rule flagged 4,423 more orders, all cancelled shipments already behind schedule. Same headline, verified from first principles: 54.8% late, $2.14M of profit exposed.</p>
+          <a href="https://github.com/charles-agyekum/dataco-late-delivery-pandas" target="_blank" rel="noopener" style="font:700 15px 'Hanken Grotesk';color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;">View the notebook <span class="ca-ar">→</span></a>
+        </div>
+        <div style="font:700 14px/1.9 'JetBrains Mono';color:var(--acc-lt);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:22px 24px;">
+          late = df[<span style="color:#7d8190;">"days_real"</span>] &gt; df[<span style="color:#7d8190;">"days_sched"</span>]<br>late.<span style="color:#7d8190;">sum</span>()&nbsp;&nbsp;<span style="color:#5f6470;"># 103,400</span><br>late.<span style="color:#7d8190;">mean</span>()&nbsp;<span style="color:#5f6470;"># 0.548</span><br>df.loc[late,<span style="color:#7d8190;">"profit"</span>].<span style="color:#7d8190;">sum</span>()<br>&nbsp;&nbsp;&nbsp;<span style="color:#5f6470;"># $2.14M at risk</span>
+        </div>
+      </article>
 
       <!-- SQL black card -->
       <article id="sql" class="ca-black reveal" style="background:#0c0c0e;color:#fff;margin:26px 0 0;padding:46px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;overflow:hidden;">
