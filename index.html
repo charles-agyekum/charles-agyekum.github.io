@@ -98,7 +98,7 @@
         <div style="font:700 12px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:#8b8f9c;margin-top:6px;">Rows analysed</div>
       </div>
       <div style="padding:34px 8px 34px 30px;border-right:1px solid rgba(255,255,255,.1);">
-        <div style="font:800 40px 'Hanken Grotesk';letter-spacing:-.02em;" data-count="8" data-pad="2">08</div>
+        <div style="font:800 40px 'Hanken Grotesk';letter-spacing:-.02em;" data-count="9" data-pad="2">09</div>
         <div style="font:700 12px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:#8b8f9c;margin-top:6px;">Projects</div>
       </div>
       <div style="padding:34px 8px 34px 30px;border-right:1px solid rgba(255,255,255,.1);">
@@ -229,6 +229,19 @@
         </div>
         <div style="font:700 14px/1.9 'JetBrains Mono';color:var(--acc-lt);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:22px 24px;">
           late = df[<span style="color:#7d8190;">"days_real"</span>] &gt; df[<span style="color:#7d8190;">"days_sched"</span>]<br>late.<span style="color:#7d8190;">sum</span>()&nbsp;&nbsp;<span style="color:#5f6470;"># 103,400</span><br>late.<span style="color:#7d8190;">mean</span>()&nbsp;<span style="color:#5f6470;"># 0.548</span><br>df.loc[late,<span style="color:#7d8190;">"profit"</span>].<span style="color:#7d8190;">sum</span>()<br>&nbsp;&nbsp;&nbsp;<span style="color:#5f6470;"># $2.14M at risk</span>
+        </div>
+      </article>
+
+      <!-- NHS SQL case-study card -->
+      <article id="nhs" class="ca-black reveal" style="background:#0c0c0e;color:#fff;margin:26px 0 0;padding:46px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;overflow:hidden;">
+        <div>
+          <span style="font:700 12px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--acc-lt);">SQL Server · NHS England benchmark · Target sector</span>
+          <h3 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.01em;margin:14px 0 12px;">NHS Cancer Pathway — the 62-Day Standard</h3>
+          <p style="font:400 16px/1.62 'Hanken Grotesk';color:#bcbcc4;margin:0 0 22px;max-width:54ch;">500 referral-to-treatment pathways tested against the real NHS England 62-day standard — 85% target, reformed October 2023, cited and verified. The cohort verified at 99.2% within standard; then the aggregate was challenged with a provider-level breakdown, because a strong headline can hide a weak provider. The data gives the dates; the analyst brings the benchmark.</p>
+          <a href="https://charles-agyekum.github.io/projects/nhs-cancer-pathway.html" target="_blank" rel="noopener" style="font:700 15px 'Hanken Grotesk';color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;">Read the case study <span class="ca-ar">→</span></a>
+        </div>
+        <div style="font:700 14px/1.9 'JetBrains Mono';color:var(--acc-lt);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:22px 24px;">
+          <span style="color:#7d8190;">CASE WHEN</span> <span style="color:#7d8190;">DATEDIFF</span>(day,<br>&nbsp;&nbsp;Referral_Date,<br>&nbsp;&nbsp;Treatment_Start_Date) &gt; 62<br><span style="color:#7d8190;">THEN</span> 'Breached' <span style="color:#7d8190;">END</span><br><span style="color:#5f6470;">-- 99.2% vs 85% target</span>
         </div>
       </article>
 

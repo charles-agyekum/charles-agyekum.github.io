@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHS Cancer Pathway — the 62-Day Standard — Charles Agyekum</title>
+<meta name="description" content="500 referral-to-treatment pathways tested in SQL Server against the real NHS England 62-day cancer waiting standard (85% target). The aggregate verified at 99.2% — then challenged with a provider-level breakdown.">
+<meta name="author" content="Charles Agyekum">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NHS Cancer Pathway — the 62-Day Standard — Charles Agyekum">
+<meta property="og:description" content="500 referral-to-treatment pathways tested in SQL Server against the real NHS England 62-day cancer waiting standard (85% target). The aggregate verified at 99.2% — then challenged with a provider-level breakdown.">
+<meta property="og:url" content="https://charles-agyekum.github.io/projects/nhs-cancer-pathway.html">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>html{scroll-behavior:smooth}body{margin:0}
+*{box-sizing:border-box;}
+@keyframes ppFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pp-cta{transition:transform .2s,box-shadow .25s;}
+.pp-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,107,79,.3);}
+.pp-cta:hover .pp-ar,.pp-link:hover .pp-ar{transform:translateX(5px);}
+.pp-ar{transition:transform .2s;display:inline-block;}
+.pp-ghost{transition:background .2s,color .2s;}
+.pp-ghost:hover{background:#fff !important;color:var(--acc-a) !important;border-color:#fff !important;}
+.pp-ghost:hover .pp-ar{transform:translateX(4px);}
+.pp-ghost span{white-space:nowrap;}
+.pp-link{transition:color .18s;}
+.pp-nav a{transition:color .18s;}
+.pp-nav a:hover{color:var(--acc-a);}
+.sqlblock{font:500 13.5px/1.75 'JetBrains Mono',monospace;color:#8fd0bb;background:#0c0c0e;border:1px solid rgba(255,255,255,.1);padding:22px 26px;overflow-x:auto;white-space:pre;margin:0;}
+.sqlblock .kw{color:#7d8190;}
+.sqlblock .cm{color:#5f6470;}
+</style>
+</head>
+<body>
+<div id="pp-root" style="--acc-a:#1F6B4F;--acc-b:#1F6B4F;--acc-lt:#8fd0bb;--acc-glow:rgba(31,107,79,.24);--acc-glow2:rgba(31,107,79,.18);font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#171717;-webkit-font-smoothing:antialiased;">
+
+  <!-- utility bar -->
+  <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
+      <span>Risk &amp; finance analytics — Excel · Power BI · SQL · Python</span>
+      <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header style="background:#fff;border-bottom:1px solid #e7e7e7;">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="https://charles-agyekum.github.io/" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+        <div style="width:50px;height:50px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 19px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div>
+          <div style="font:800 18px 'Hanken Grotesk';letter-spacing:-.01em;line-height:1;">Charles Agyekum</div>
+          <div style="font:600 12px 'Hanken Grotesk';color:#8a8a8a;margin-top:3px;">Risk &amp; finance analytics · Part-Qualified ACCA · Portfolio 2026</div>
+        </div>
+      </a>
+      <a href="https://charles-agyekum.github.io/" class="pp-link" style="font:700 14px 'Hanken Grotesk';color:#171717;text-decoration:none;display:inline-flex;align-items:center;gap:9px;"><span class="pp-ar" style="transform:rotate(180deg);">→</span> All work</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="position:relative;overflow:hidden;background:#08090d;color:#fff;">
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">SQL Server · NHS England benchmark · Target-sector case study</div>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">NHS Cancer Pathway — the 62-Day Standard<span style="color:var(--acc-lt);">.</span></h1>
+      <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
+        <span><span style="color:var(--acc-lt);">Tool</span> &nbsp;SQL Server (T-SQL)</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Dataset</span> &nbsp;500 referral-to-treatment pathways (training extract)</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Benchmark</span> &nbsp;NHS England Cancer Waiting Times standards — real policy, cited below</span>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 0;animation:ppFade .7s .26s forwards;">
+        <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.4);color:#fff;font:700 15px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:14px 24px;display:flex;align-items:center;">Back to all work</span><span style="padding:14px 18px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- body -->
+  <section style="background:#fff;">
+    <div style="max-width:860px;margin:0 auto;padding:70px 32px 30px;">
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);">The question</div>
+      <h2 style="font:800 34px/1.1 'Hanken Grotesk';letter-spacing:-.02em;margin:12px 0 14px;">Is this cohort meeting the standard — and is the aggregate hiding anyone<span style="color:var(--acc-a);">?</span></h2>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#5b5b5b;margin:0 0 18px;">The NHS 62-day standard says a cancer patient should start treatment within 62 days of urgent referral, and a provider is on target when <b>85% or more</b> of pathways meet it. The data gives you dates; it does not give you the standard. The benchmark comes from policy — knowing where to find it, and that it was reformed in October 2023, is the analyst's job, not the dataset's.</p>
+      <p style="font:400 15px/1.65 'Hanken Grotesk';color:#8a8a8a;margin:0 0 34px;">Honesty note: the 500-pathway extract is training data; the standard it is tested against is the real one. The method — derive the measure, verify the cohort, benchmark against cited policy, then challenge the aggregate — is exactly the method for the real thing.</p>
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);">Step 1 · Scope check before any headline</div>
+      <p style="font:400 16px/1.65 'Hanken Grotesk';color:#5b5b5b;margin:12px 0 16px;">A breach rate over an incomplete cohort is a wrong breach rate. First question to the data: does anyone have no treatment date?</p>
+      <pre class="sqlblock"><span class="kw">SELECT</span>
+  <span class="kw">COUNT</span>(*)                              <span class="kw">AS</span> Total_Patients,
+  <span class="kw">COUNT</span>(Treatment_Start_Date)           <span class="kw">AS</span> Treated,
+  <span class="kw">COUNT</span>(*) - <span class="kw">COUNT</span>(Treatment_Start_Date) <span class="kw">AS</span> Untreated
+<span class="kw">FROM</span> CancerPathway;
+<span class="cm">-- 0 untreated: all 500 pathways are in scope.</span></pre>
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);margin-top:36px;">Step 2 · Derive the measure, band the cohort</div>
+      <p style="font:400 16px/1.65 'Hanken Grotesk';color:#5b5b5b;margin:12px 0 16px;">The wait is computed from the dates — not taken from a pre-made column — and each pathway is banded against the 62-day line with CASE.</p>
+      <pre class="sqlblock"><span class="kw">SELECT</span>
+  NHS_Number,
+  <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) <span class="kw">AS</span> Days_Ref_to_Treatment,
+  <span class="kw">CASE WHEN</span> <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) &gt; 62
+       <span class="kw">THEN</span> 'Breached' <span class="kw">ELSE</span> 'Within 62-day standard' <span class="kw">END</span> <span class="kw">AS</span> Status_62_Day
+<span class="kw">FROM</span> CancerPathway;</pre>
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);margin-top:36px;">Step 3 · The headline, against the cited standard</div>
+      <pre class="sqlblock"><span class="kw">SELECT</span>
+  <span class="kw">COUNT</span>(*) <span class="kw">AS</span> Total_Patients,
+  <span class="kw">SUM</span>(<span class="kw">CASE WHEN</span> <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) &gt; 62
+      <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) <span class="kw">AS</span> Breached,
+  <span class="kw">CAST</span>(100.0 * <span class="kw">SUM</span>(<span class="kw">CASE WHEN</span> <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) &gt; 62
+      <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) / <span class="kw">COUNT</span>(*) <span class="kw">AS DECIMAL</span>(5,1)) <span class="kw">AS</span> Breach_Rate_Pct
+<span class="kw">FROM</span> CancerPathway;
+<span class="cm">-- 99.2% within standard vs the 85% target — comfortably on target.</span></pre>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0;">
+        <div style="border:1px solid #e6e6e2;padding:22px 24px;">
+          <div style="font:800 34px 'Hanken Grotesk';letter-spacing:-.02em;">99.2%</div>
+          <div style="font:700 11px 'JetBrains Mono';letter-spacing:.1em;text-transform:uppercase;color:#8a8a8a;margin-top:5px;">Within the 62-day standard</div>
+        </div>
+        <div style="border:1px solid #e6e6e2;padding:22px 24px;">
+          <div style="font:800 34px 'Hanken Grotesk';letter-spacing:-.02em;">85%</div>
+          <div style="font:700 11px 'JetBrains Mono';letter-spacing:.1em;text-transform:uppercase;color:#8a8a8a;margin-top:5px;">NHS England target (cited)</div>
+        </div>
+        <div style="border:1px solid #e6e6e2;padding:22px 24px;">
+          <div style="font:800 34px 'Hanken Grotesk';letter-spacing:-.02em;">500 / 500</div>
+          <div style="font:700 11px 'JetBrains Mono';letter-spacing:.1em;text-transform:uppercase;color:#8a8a8a;margin-top:5px;">Cohort verified in scope</div>
+        </div>
+      </div>
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);margin-top:40px;">Step 4 · Challenge the aggregate</div>
+      <p style="font:400 16px/1.65 'Hanken Grotesk';color:#5b5b5b;margin:12px 0 16px;">A 99.2% headline can be process excellence — or a strong majority overshadowing a weak provider. The same instinct that says a portfolio-level risk number can hide a concentrated counterparty says a trust-level compliance number can hide a struggling provider. So the aggregate gets challenged, not celebrated:</p>
+      <pre class="sqlblock"><span class="kw">SELECT</span>
+  Treatment_Provider,
+  <span class="kw">COUNT</span>(*) <span class="kw">AS</span> Patients,
+  <span class="kw">AVG</span>(<span class="kw">CAST</span>(<span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) <span class="kw">AS DECIMAL</span>(5,1))) <span class="kw">AS</span> Avg_Wait_Days,
+  <span class="kw">SUM</span>(<span class="kw">CASE WHEN</span> <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) &gt; 62
+      <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) <span class="kw">AS</span> Breaches
+<span class="kw">FROM</span> CancerPathway
+<span class="kw">GROUP BY</span> Treatment_Provider
+<span class="kw">ORDER BY</span> Breaches <span class="kw">DESC</span>, Avg_Wait_Days <span class="kw">DESC</span>;</pre>
+
+      <div style="font:700 13px 'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase;color:var(--acc-a);margin-top:40px;">The recommendation</div>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#5b5b5b;margin:12px 0 16px;">Report compliance at <b>provider level, not cohort level</b> — the 62-day headline is a floor for scrutiny, not a ceiling. And extend the monitoring to the other two reformed standards — the 28-day Faster Diagnosis Standard (75%) and the 31-day Decision-to-Treat Standard (96%) — which need diagnosis and decision dates this extract does not carry; that is the next data request, named before it is needed.</p>
+
+      <div style="border:1px solid #e6e6e2;background:#f6f6f4;padding:20px 24px;margin:26px 0 0;">
+        <div style="font:700 11px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:#8a8a8a;">Benchmark source — external policy, not derived from the dataset</div>
+        <p style="font:400 14px/1.6 'Hanken Grotesk';color:#5b5b5b;margin:8px 0 0;">NHS England Cancer Waiting Times Standards, reformed 1 October 2023: 28-day Faster Diagnosis 75% · 31-day Decision-to-Treat 96% · 62-day Referral-to-Treatment 85%. Verified 5 July 2026 against <a href="https://www.england.nhs.uk/long-read/changes-to-cancer-waiting-times-standards-from-1-october-2023/" target="_blank" rel="noopener" style="color:var(--acc-a);font-weight:600;">england.nhs.uk — changes to cancer waiting times standards</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#101116;color:#cfd2da;margin-top:60px;">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:42px;height:42px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 16px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
+      </div>
+      <a href="https://charles-agyekum.github.io/" class="pp-link" style="font:700 14px 'Hanken Grotesk';color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:9px;">All work <span class="pp-ar">→</span></a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
