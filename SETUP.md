@@ -1,4 +1,4 @@
-# SETUP — GitHub Pages
+# SETUP: GitHub Pages
 
 The site is **already live** at **https://charles-agyekum.github.io** (username
 `charles-agyekum`, repo `charles-agyekum.github.io`, branch `main`). This file is

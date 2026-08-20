@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategic Default Pressure Index: advance-funding risk &middot; Charles Agyekum</title>
+<meta name="description" content="Counterparty default-risk on a real cocoa season, 2022/23. A 6.00% default-incentive threshold derived from the contract, delivery recovery worked from 80.0% to 94.7%, and exposure concentrated in 4 of 36 counterparties. Runnable, de-identified.">
+<meta name="author" content="Charles Agyekum">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Strategic Default Pressure Index &middot; Charles Agyekum">
+<meta property="og:description" content="Counterparty default-risk on a real cocoa season: a 6.00% threshold derived from the contract, recovery worked to 94.7%, exposure concentrated in 4 of 36 counterparties.">
+<meta property="og:url" content="https://charles-agyekum.github.io/projects/sdpi-advance-funding-risk.html">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+html{scroll-behavior:smooth}body{margin:0}
+.reveal-ready .reveal{opacity:0;transform:translateY(18px)}
+.reveal-ready .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+*{box-sizing:border-box;}
+@keyframes ppFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pp-cta{transition:transform .2s,box-shadow .25s;}
+.pp-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,107,79,.32);}
+.pp-cta:hover .pp-ar,.pp-link:hover .pp-ar{transform:translateX(5px);}
+.pp-ar{transition:transform .2s;display:inline-block;}
+.pp-ghost{transition:background .2s,color .2s;}
+.pp-ghost:hover{background:#fff !important;color:var(--acc-a) !important;border-color:#fff !important;}
+.pp-ghost:hover .pp-ar{transform:translateX(4px);}
+.pp-ghost span{white-space:nowrap;}
+.pp-nav a{transition:color .18s;} .pp-nav a:hover{color:var(--acc-a);}
+.pp-link{transition:color .18s;}
+
+/* ===== embedded SDPI dashboard (Brand Design System) ===== */
+.sheet{max-width:none;margin:0;background:var(--bg,#fff)}
+.sheet .kicker{font:700 11px 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-a)}
+.sheet .dot{color:var(--acc-a)}
+.sheet .db-hero{background:#08090d;color:#fff;padding:34px 44px 30px;position:relative;overflow:hidden}
+.sheet .db-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 380px at 82% 12%,var(--acc-glow),transparent 70%);pointer-events:none}
+.sheet .db-hero .kicker{color:var(--acc-lt)}
+.sheet .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;position:relative}
+.sheet .big{font-weight:800;font-size:98px;line-height:.9;letter-spacing:-.03em;color:#fff}
+.sheet .big small{font-size:40px;vertical-align:top;line-height:1;font-weight:700}
+.sheet .db-hero h2{font-weight:800;font-size:19px;letter-spacing:-.01em;margin:12px 0 6px;color:#fff}
+.sheet .db-hero p{color:#bcbcc4;font-size:14px;margin:0;max-width:44ch}
+.sheet .deriv{border-left:2px solid var(--acc-a);padding:2px 0 2px 18px;display:flex;flex-direction:column;gap:12px}
+.sheet .deriv .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:11px}
+.sheet .deriv .row:last-child{border-bottom:0;padding-bottom:0}
+.sheet .deriv .lbl{color:#bcbcc4;font-size:12.5px}
+.sheet .deriv .val{font:700 15px 'JetBrains Mono',monospace;color:#fff;white-space:nowrap}
+.sheet .deriv .val.hi{color:var(--acc-lt);font-size:17px}
+.sheet .ctx{padding:16px 44px;border-bottom:1px solid var(--line);color:var(--body);font-size:13.5px;background:#fff}
+.sheet .ctx b{color:var(--ink)}
+.sheet .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.sheet .tile{background:#fff;padding:20px 22px}
+.sheet .tile .n{font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.sheet .tile .n.g{color:var(--acc-a)}
+.sheet .tile .c{color:var(--body);font-size:12.5px;margin-top:8px;line-height:1.35}
+.sheet .charts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.sheet .card{background:#fff;padding:22px 26px}
+.sheet .card h2{font-weight:800;font-size:16px;letter-spacing:-.01em;margin:0 0 2px}
+.sheet .card .sub{color:var(--mut);font-size:12px;margin:0 0 14px;min-height:30px}
+.sheet svg{display:block;width:100%;height:auto}
+.sheet .axis{stroke:var(--line);stroke-width:1}
+.sheet .grid{stroke:#eee;stroke-width:1}
+.sheet .tickt{font:600 10px 'JetBrains Mono',monospace;fill:var(--mut)}
+.sheet .barlab{font:800 13px 'Hanken Grotesk';fill:var(--ink)}
+.sheet .barrec{font:700 11px 'JetBrains Mono',monospace;fill:var(--acc-a)}
+.sheet .barname{font:600 11px 'Hanken Grotesk';fill:var(--body)}
+.sheet .note{font:600 11px 'Hanken Grotesk';fill:var(--body)}
+.sheet .mk{font:800 11px 'Hanken Grotesk';fill:var(--ink)}
+.sheet .season{padding:22px 44px 8px}
+.sheet .season h2{font-weight:800;font-size:16px;margin:0 0 12px}
+.sheet table{width:100%;border-collapse:collapse;font-size:13.5px}
+.sheet th,.sheet td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line)}
+.sheet th:first-child,.sheet td:first-child{text-align:left}
+.sheet thead th{font:700 10.5px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);border-bottom:1.5px solid var(--ink)}
+.sheet tbody tr:last-child td{font-weight:700}
+.sheet tbody td.g{color:var(--acc-a)}
+.sheet .market{margin:8px 44px 0;padding:16px 20px;background:var(--bg-alt);border-left:3px solid var(--acc-a);font-size:13px;color:var(--body)}
+.sheet .market b{color:var(--ink)}
+.sheet .dbfoot{padding:18px 44px 26px;color:var(--mut);font-size:11.5px;line-height:1.6}
+.sheet .dbfoot a{color:var(--acc-a);font-weight:700;text-decoration:none}
+.sheet .dbfoot .rule{height:2px;background:var(--acc-a);margin:0 0 12px}
+@media (max-width:760px){
+  .sheet .hero-grid,.sheet .tiles,.sheet .charts{grid-template-columns:1fr}
+  .sheet .big{font-size:72px}
+}
+</style>
+</head>
+<body>
+<div id="pp-root" style="--acc-a:#1F6B4F;--acc-b:#1F6B4F;--acc-lt:#8fd0bb;--acc-glow:rgba(31,107,79,.24);--acc-glow2:rgba(31,107,79,.18);--ink:#171717;--body:#5b5b5b;--mut:#8a8a8a;--line:#e6e6e2;--bg:#fff;--bg-alt:#f6f6f4;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#f6f6f4;color:#171717;-webkit-font-smoothing:antialiased;">
+
+  <!-- utility bar -->
+  <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
+      <span>Counterparty credit risk &middot; Python &middot; one real season</span>
+      <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header style="background:#fff;border-bottom:1px solid #e7e7e7;">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="https://charles-agyekum.github.io/" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+        <div style="width:50px;height:50px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 19px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div>
+          <div style="font:800 18px 'Hanken Grotesk';letter-spacing:-.01em;line-height:1;">Charles Agyekum</div>
+          <div style="font:600 12px 'Hanken Grotesk';color:#8a8a8a;margin-top:3px;">Risk &amp; finance analytics &middot; Portfolio 2026</div>
+        </div>
+      </a>
+      <a href="https://charles-agyekum.github.io/" class="pp-link" style="font:700 14px 'Hanken Grotesk';color:#171717;text-decoration:none;display:inline-flex;align-items:center;gap:9px;"><span class="pp-ar" style="transform:rotate(180deg);">&rarr;</span> All work</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="position:relative;overflow:hidden;background:#08090d;color:#fff;">
+    <div id="pp-hero-fx" style="position:absolute;inset:0;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow,rgba(31,107,79,.24)),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2,rgba(31,107,79,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">Python &middot; Counterparty credit risk &middot; Flagship</div>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">Strategic Default Pressure Index<span style="color:var(--acc-lt);">.</span></h1>
+      <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
+        <span><span style="color:var(--acc-lt);">Method</span> &nbsp;Python, pandas, deterministic de-identification</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Data</span> &nbsp;One cocoa district, 2022/23: 36 clerks, 16 weeks, my own book</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Built</span> &nbsp;2026</span>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 0;animation:ppFade .7s .26s forwards;">
+        <a href="https://github.com/charles-agyekum/sdpi-advance-funding-risk" target="_blank" rel="noopener" class="pp-cta" style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 15px 'Hanken Grotesk';padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:11px;">Read the model, run the code <span class="pp-ar">&#8599;</span></a>
+        <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.4);color:#fff;font:700 15px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:14px 24px;display:flex;align-items:center;">Back to all work</span><span style="padding:14px 18px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">&rarr;</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- artifact: the dashboard -->
+  <section style="background:#101116;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div class="reveal" style="transform:translateY(-34px);border:1px solid #2a2c34;box-shadow:0 30px 70px rgba(0,0,0,.5);overflow:hidden;">
+        <div class="sheet">
+
+          <div class="db-hero">
+            <div class="hero-grid">
+              <div>
+                <div class="kicker">Strategic Default Pressure Index</div>
+                <div class="big">6.00<small>%</small></div>
+                <h2>The default-incentive threshold<span class="dot">.</span></h2>
+                <p>The market premium at which a supplier profits by not delivering. Derived from the contract's own deductions, not assumed.</p>
+              </div>
+              <div class="deriv">
+                <div class="row"><span class="lbl">Bag price (COCOBOD, 2022/23)</span><span class="val">GHS 800</span></div>
+                <div class="row"><span class="lbl">Buffer withheld per bag funded</span><span class="val">GHS 36</span></div>
+                <div class="row"><span class="lbl">Commission per bag supplied</span><span class="val">GHS 12</span></div>
+                <div class="row"><span class="lbl">Forfeited by defaulting</span><span class="val">GHS 48</span></div>
+                <div class="row"><span class="lbl">48 &divide; 800</span><span class="val hi">6.00%</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ctx"><b>One cocoa district, 2022/23 season.</b> 36 purchasing clerks funded against future delivery over 16 weeks (16 Sep to 30 Dec 2022), reconstructed from three dated risk reports on a de-identified panel of the author's own book. The exposure was carried personally, under bond.</div>
+
+          <div class="tiles">
+            <div class="tile"><div class="n g">94.7%</div><div class="c">delivery recovery at season close, up from 80.0% at the opening report</div></div>
+            <div class="tile"><div class="n">83%</div><div class="c">of peak open exposure worked down (654 bags to 111) while funding kept growing</div></div>
+            <div class="tile"><div class="n g">4 of 36</div><div class="c">clerks carried half the open gap; 9 carried 80%; largest single 19.5%</div></div>
+            <div class="tile"><div class="n">Net credit</div><div class="c">season closed GHS 9,468 in credit, from GHS 169,788 open, bond never drawn</div></div>
+          </div>
+
+          <div class="charts">
+            <div class="card">
+              <h2>Exposure worked down across the season</h2>
+              <p class="sub">Open gap in bags at each risk report, with delivery recovery. Intra-season peak was 654 bags (week ending 25 Nov).</p>
+              <svg viewBox="0 0 420 232" role="img" aria-label="Open exposure falling from 297 to 111 bags across three reports">
+                <line class="axis" x1="46" y1="200" x2="404" y2="200"/>
+                <rect x="70" y="42.2" width="76" height="157.8" fill="var(--acc-a)" opacity="0.9"/>
+                <text class="barlab" x="108" y="34" text-anchor="middle">297</text>
+                <text class="barrec" x="108" y="216" text-anchor="middle">80.0%</text>
+                <text class="barname" x="108" y="228" text-anchor="middle">Opening</text>
+                <rect x="172" y="79.4" width="76" height="120.6" fill="var(--acc-a)" opacity="0.9"/>
+                <text class="barlab" x="210" y="71" text-anchor="middle">227</text>
+                <text class="barrec" x="210" y="216" text-anchor="middle">88.8%</text>
+                <text class="barname" x="210" y="228" text-anchor="middle">November</text>
+                <rect x="274" y="141.0" width="76" height="59" fill="var(--acc-a)"/>
+                <text class="barlab" x="312" y="133" text-anchor="middle">111</text>
+                <text class="barrec" x="312" y="216" text-anchor="middle">94.7%</text>
+                <text class="barname" x="312" y="228" text-anchor="middle">December</text>
+                <text class="tickt" x="40" y="204" text-anchor="end">0</text>
+                <text class="tickt" x="40" y="46" text-anchor="end">bags</text>
+              </svg>
+            </div>
+            <div class="card">
+              <h2>Exposure was concentrated, not spread</h2>
+              <p class="sub">Cumulative share of the open gap as clerks are ranked by position. A uniform funding policy would misprice almost all of them.</p>
+              <svg viewBox="0 0 460 232" role="img" aria-label="Concentration curve: 4 of 36 clerks carry 50 percent, 9 carry 80 percent">
+                <line class="grid" x1="55" y1="110" x2="435" y2="110"/>
+                <line class="grid" x1="55" y1="56" x2="435" y2="56" stroke-dasharray="4 4"/>
+                <line class="grid" x1="55" y1="20" x2="435" y2="20"/>
+                <line class="axis" x1="55" y1="200" x2="435" y2="200"/>
+                <line class="axis" x1="55" y1="20" x2="55" y2="200"/>
+                <line x1="55" y1="200" x2="435" y2="20" stroke="var(--mut)" stroke-width="1" stroke-dasharray="5 5" opacity="0.6"/>
+                <polyline fill="none" stroke="var(--acc-a)" stroke-width="2.5" points="55,200 65.6,164.9 76.1,133 86.7,115.6 97.2,99.6 107.8,88.6 118.3,77.4 128.9,67.7 139.4,58.2 150,51.9 160.6,45.6 171.1,40.7 181.7,35.8 192.2,31.2 202.8,27.9 213.3,26.3 223.9,24.9 234.4,23.2 245,21.6 255.6,20 435,20"/>
+                <circle cx="97.2" cy="99.6" r="4.5" fill="#fff" stroke="var(--acc-a)" stroke-width="2.5"/>
+                <text class="mk" x="104" y="112">4 clerks = 50%</text>
+                <circle cx="150" cy="51.9" r="4.5" fill="#fff" stroke="var(--acc-a)" stroke-width="2.5"/>
+                <text class="mk" x="157" y="48">9 clerks = 80%</text>
+                <text class="tickt" x="49" y="204" text-anchor="end">0</text>
+                <text class="tickt" x="49" y="114" text-anchor="end">50</text>
+                <text class="tickt" x="49" y="60" text-anchor="end">80</text>
+                <text class="tickt" x="49" y="24" text-anchor="end">100%</text>
+                <text class="tickt" x="245" y="222" text-anchor="middle">clerks ranked by open exposure (of 36)</text>
+                <text class="note" x="330" y="176" opacity="0.7">even spread</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="season">
+            <h2>The season position, across three dated reports</h2>
+            <table>
+              <thead>
+                <tr><th>Report</th><th>Clerks</th><th>Funded</th><th>Delivered</th><th>Open gap</th><th>Recovery</th><th>Net (GHS)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Opening</td><td>35</td><td>1,487</td><td>1,190</td><td>297</td><td>80.0%</td><td>169,788</td></tr>
+                <tr><td>November</td><td>36</td><td>2,025</td><td>1,798</td><td>227</td><td>88.8%</td><td>87,124</td></tr>
+                <tr><td>December</td><td>36</td><td>2,075</td><td>1,964</td><td>111</td><td class="g">94.7%</td><td class="g">9,468 credit</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="market"><b>Where the pressure comes from.</b> Ghana's price is fixed by COCOBOD at GHS 800 per bag, so there is no domestic spot market to sell into. The pressure is cross-border: Cote d'Ivoire farmgate ran near $1.33/kg against Ghana's $0.89 to $1.25/kg as the cedi fell about 27% in 2022, a gap that ran several times the 6.00% threshold. That is the season Ghana lost volume to smuggling.</div>
+
+          <div class="dbfoot">
+            <div class="rule"></div>
+            <b style="color:var(--ink)">Method:</b> Python, deterministic pseudonymisation, panel reconstruction, incentive-threshold derivation. Names replaced with stable pseudonyms and character notes dropped before anything left the source, verified by an automated check. Figures in GHS, the administered COCOBOD contract currency, so the 48 &divide; 800 threshold is exact in that unit.
+          </div>
+
+        </div>
+      </div>
+      <div style="margin:-18px 0 30px;font:600 13px 'JetBrains Mono';color:#7e828d;text-align:center;">Strategic Default Pressure Index &middot; counterparty default-risk on a real cocoa season</div>
+    </div>
+  </section>
+
+  <!-- the finding -->
+  <section style="background:#fff;">
+    <div style="max-width:900px;margin:0 auto;padding:64px 32px 40px;">
+      <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);">What it found</div>
+      <h2 style="font:800 34px/1.1 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 26px;">From booking losses to pricing the incentive that causes them<span style="color:var(--acc-b);">.</span></h2>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">When you fund a delivery before it exists, the counterparty decides whether to deliver on economics you can see in advance. The index makes that explicit: a supplier who takes the advance and sells elsewhere forfeits the buffer and commission withheld against the bag, GHS 48 on an GHS 800 bag, so default becomes rational the moment the market pays more than <b>6.00%</b> over the advance. That threshold is derived from the contract, not chosen.</p>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">Across three dated reports the open gap was worked from 297 bags to 111, delivery recovery rising from 80.0% to 94.7%, and the season closed in net credit. The intra-season peak of 654 bags was closed by 83% while funding kept growing, which is the harder version of the problem.</p>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 30px;">Exposure was carried, not spread: 4 of 36 clerks held half the open gap and 9 held 80%. A uniform funding policy would have mispriced almost all of them, which is why the policy behind the book was tiered by clerk. The model, the code and a de-identified season are published in the open, so every figure here can be checked rather than taken on trust.</p>
+      <a href="https://github.com/charles-agyekum/sdpi-advance-funding-risk" target="_blank" rel="noopener" class="pp-cta" style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 15px 'Hanken Grotesk';padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:11px;">Open the repository <span class="pp-ar">&#8599;</span></a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#101116;color:#cfd2da;">
+    <div style="max-width:1200px;margin:0 auto;padding:46px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <a href="https://charles-agyekum.github.io/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+        <div style="width:42px;height:42px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 16px 'Hanken Grotesk';color:#fff;">CA</div>
+        <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
+      </a>
+      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:64ch;">The SDPI runs on de-identified operational records from my own cocoa franchise. Figures verified against source. Part-Qualified ACCA &middot; nine years commodity supply-chain finance.</div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function reveal(){
+    if(reduce || !('IntersectionObserver' in window)) return;
+    var els=[].slice.call(document.querySelectorAll('.reveal')); if(!els.length) return;
+    document.documentElement.classList.add('reveal-ready');
+    var ro=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }); }, {threshold:0.14});
+    els.forEach(function(el){ ro.observe(el); });
+  }
+  function hero(){
+    var wrap=document.getElementById('pp-hero-fx'); if(!wrap||reduce) return;
+    var canvas=document.createElement('canvas'); canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
+    wrap.appendChild(canvas); var ctx=canvas.getContext('2d');
+    var DPR=Math.min(2,window.devicePixelRatio||1), w=0,h=0,nodes=[],raf=null,running=false;
+    var LINE=[31,107,79], DOT=[143,208,187];
+    function resize(){ var r=wrap.getBoundingClientRect(); w=r.width;h=r.height; canvas.width=w*DPR;canvas.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+    function make(){ var n=Math.max(24,Math.min(54,Math.round(w/26))); nodes=[]; for(var i=0;i<n;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.26,vy:(Math.random()-.5)*.26,r:Math.random()*1.6+.6,m:Math.random()<.25}); }
+    function draw(){ ctx.clearRect(0,0,w,h);
+      for(var k=0;k<nodes.length;k++){ var p=nodes[k]; p.x+=p.vx;p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+      for(var i=0;i<nodes.length;i++) for(var j=i+1;j<nodes.length;j++){ var a=nodes[i],b=nodes[j]; var d=Math.hypot(a.x-b.x,a.y-b.y); if(d<115){ ctx.strokeStyle='rgba('+LINE+','+(0.18*(1-d/115))+')'; ctx.lineWidth=1; ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke(); } }
+      for(var m=0;m<nodes.length;m++){ var q=nodes[m]; ctx.fillStyle=q.m?'rgba('+DOT+',.9)':'rgba(255,255,255,.5)'; ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,7);ctx.fill(); }
+      raf=requestAnimationFrame(draw);
+    }
+    function start(){ if(running)return; running=true; draw(); }
+    function stop(){ running=false; if(raf)cancelAnimationFrame(raf); }
+    resize(); make();
+    window.addEventListener('resize',function(){ resize(); make(); });
+    if(!document.hidden) start();
+    document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){ hero(); reveal(); });
+})();
+</script>
+</body>
+</html>

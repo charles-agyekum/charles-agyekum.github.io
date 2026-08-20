@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SQL Practice — Joins, Subqueries &amp; CASE — Charles Agyekum</title>
-<meta name="description" content="A worked set of 31 SQL questions covering the core of analytical querying — joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
+<title>SQL Practice: Joins, Subqueries &amp; CASE, Charles Agyekum</title>
+<meta name="description" content="A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
 <meta name="author" content="Charles Agyekum">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SQL Practice — Joins, Subqueries &amp; CASE — Charles Agyekum">
-<meta property="og:description" content="A worked set of 31 SQL questions covering the core of analytical querying — joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
+<meta property="og:title" content="SQL Practice: Joins, Subqueries &amp; CASE, Charles Agyekum">
+<meta property="og:description" content="A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
 <meta property="og:url" content="https://charles-agyekum.github.io/projects/sql-practice.html">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -39,7 +39,7 @@
   <!-- utility bar -->
   <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
     <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
-      <span>Data analyst — Excel · Power BI · SQL · Python</span>
+      <span>Data analyst. Excel · Power BI · SQL · Python</span>
       <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
     </div>
   </div>
@@ -64,7 +64,7 @@
     <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow,rgba(31,107,79,.24)),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2,rgba(31,107,79,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
     <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
       <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">SQL Server · Practice set</div>
-      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">SQL Practice — Joins, Subqueries &amp; CASE<span style="color:var(--acc-lt);">.</span></h1>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">SQL Practice: Joins, Subqueries &amp; CASE<span style="color:var(--acc-lt);">.</span></h1>
       <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
         <span><span style="color:var(--acc-lt);">Tool</span> &nbsp;SQL Server</span><span style="opacity:.4;">/</span>
         <span><span style="color:var(--acc-lt);">Dataset</span> &nbsp;31 worked problems + reference cheat sheet</span><span style="opacity:.4;">/</span>
@@ -123,7 +123,7 @@
       <div style="min-width:0;">
         <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:0 0 14px;">What this is</h2>
         
-          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">A worked set of 31 SQL questions covering the core of analytical querying — joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files and a reference cheat sheet are kept together so the working is visible, not just the answers.</p>
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files and a reference cheat sheet are kept together so the working is visible, not just the answers.</p>
         
 
         <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Coverage</h2>
@@ -131,22 +131,22 @@
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">1</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Joins —</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">across related tables, including left joins and the cases where rows go missing if you pick the wrong one.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Joins</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">across related tables, including left joins and the cases where rows go missing if you pick the wrong one.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">2</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Subqueries —</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">for filtering and for derived values.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Subqueries:</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">for filtering and for derived values.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">3</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">CASE —</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">banding continuous values and recoding categories.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">CASE:</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">banding continuous values and recoding categories.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">4</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Cheat sheet —</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">kept as a quick reference alongside the query files.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Cheat sheet,</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">kept as a quick reference alongside the query files.</span>
             </li>
           
         </ol>
