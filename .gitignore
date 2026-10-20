@@ -1,0 +1,23 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# Office lock + temp files
+~$*
+*.tmp
+
+# Jekyll local build
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Python / notebook scratch
+__pycache__/
+.ipynb_checkpoints/
+anaconda_projects/
+
+# Large raw data that should not live in the repo (link to source instead)
+# Remove a line below if you DO want to publish that file.
+*.csv
