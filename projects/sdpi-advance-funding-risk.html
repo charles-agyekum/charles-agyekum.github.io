@@ -140,7 +140,7 @@ html{scroll-behavior:smooth}body{margin:0}
             <div class="hero-grid">
               <div>
                 <div class="kicker">Strategic Default Pressure Index</div>
-                <div class="big">6.00<small>%</small></div>
+                <div class="big"><span data-countup>6.00</span><small>%</small></div>
                 <h2>The default-incentive threshold<span class="dot">.</span></h2>
                 <p>The market premium at which a supplier profits by not delivering.</p>
               </div>
@@ -155,9 +155,9 @@ html{scroll-behavior:smooth}body{margin:0}
           <div class="ctx"><b>One cocoa district, 2022/23 season.</b> 36 purchasing clerks funded against future delivery over 16 weeks (16 Sep to 30 Dec 2022), rebuilt from three dated risk reports on my own book. I carried the exposure personally, under bond.</div>
 
           <div class="tiles">
-            <div class="tile"><div class="n g">94.7%</div><div class="c">delivery recovery at season close, up from 80.0% at the opening report</div></div>
-            <div class="tile"><div class="n">83%</div><div class="c">of peak open exposure worked down (654 bags to 111) while funding kept growing</div></div>
-            <div class="tile"><div class="n g">4 of 36</div><div class="c">clerks carried half the open gap; 9 carried 80%; largest single 19.5%</div></div>
+            <div class="tile"><div data-countup class="n g">94.7%</div><div class="c">delivery recovery at season close, up from 80.0% at the opening report</div></div>
+            <div class="tile"><div data-countup class="n">83%</div><div class="c">of peak open exposure worked down (654 bags to 111) while funding kept growing</div></div>
+            <div class="tile"><div data-countup class="n g">4 of 36</div><div class="c">clerks carried half the open gap; 9 carried 80%; largest single 19.5%</div></div>
             <div class="tile"><div class="n">Net credit</div><div class="c">season closed GHS 9,468 in credit, from GHS 169,788 open, bond never drawn</div></div>
           </div>
 
@@ -291,6 +291,44 @@ html{scroll-behavior:smooth}body{margin:0}
     document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
   }
   document.addEventListener('DOMContentLoaded',function(){ hero(); reveal(); });
+})();
+</script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(){
+    var els=[].slice.call(document.querySelectorAll('[data-count],[data-countup]'));
+    if(!els.length) return;
+    function padFmt(n,pad){ var r=Math.round(n); return pad?String(r).padStart(pad,'0'):r.toLocaleString('en-US'); }
+    function parseNum(txt){
+      var m=txt.match(/^(.*?)(\d[\d,]*(?:\.\d+)?)(.*)$/); if(!m) return null;
+      var num=m[2], intRaw=num.split('.')[0];
+      return { prefix:m[1], suffix:m[3], target:parseFloat(num.replace(/,/g,'')),
+               dec:(num.split('.')[1]||'').length, comma:num.indexOf(',')>=0,
+               pad:/^0\d/.test(num)?intRaw.replace(/,/g,'').length:0 };
+    }
+    function fmtParsed(p,n){
+      var v=n.toFixed(p.dec), ip=v.split('.')[0], fp=p.dec?'.'+v.split('.')[1]:'';
+      if(p.comma) ip=parseInt(ip,10).toLocaleString('en-US');
+      else if(p.pad && ip.length<p.pad) ip=ip.padStart(p.pad,'0');
+      return p.prefix+ip+fp+p.suffix;
+    }
+    function animate(el){
+      if(el.dataset.done) return; el.dataset.done='1';
+      var f, target;
+      if(el.hasAttribute('data-count')){ target=parseFloat(el.getAttribute('data-count')); var pad=parseInt(el.getAttribute('data-pad')||'0',10); f=function(n){return padFmt(n,pad);}; }
+      else { var p=parseNum(el.textContent.trim()); if(!p) return; target=p.target; f=function(n){return fmtParsed(p,n);}; }
+      if(reduce){ el.textContent=f(target); return; }
+      var dur=1600, t0=performance.now();
+      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=f(target*(1-Math.pow(1-t,3))); if(t<1) requestAnimationFrame(step); }
+      el.textContent=f(0); requestAnimationFrame(step);
+    }
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ animate(e.target); io.unobserve(e.target); } }); }, {threshold:0.45});
+      els.forEach(function(el){ io.observe(el); });
+    } else { els.forEach(animate); }
+  }
+  document.addEventListener('DOMContentLoaded',countUp);
 })();
 </script>
 </body>
