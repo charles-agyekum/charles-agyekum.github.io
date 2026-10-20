@@ -187,7 +187,7 @@
       else { var p=parseNum(el.textContent.trim()); if(!p) return; target=p.target; f=function(n){return fmtParsed(p,n);}; }
       if(reduce){ el.textContent=f(target); return; }
       var dur=1600, t0=performance.now();
-      function step(now){ var t=Math.min(1,(now-t0)/dur); el.textContent=f(target*(1-Math.pow(1-t,3))); if(t<1) requestAnimationFrame(step); }
+      function step(now){ var t=Math.max(0,Math.min(1,(now-t0)/dur)); el.textContent=f(target*(1-Math.pow(1-t,3))); if(t<1) requestAnimationFrame(step); }
       el.textContent=f(0); requestAnimationFrame(step);
     }
     if('IntersectionObserver' in window){
