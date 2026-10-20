@@ -1,4 +1,4 @@
-# Charles Agyekum: risk and finance analytics
+# Charles Agyekum: risk & finance analytics
 
 Live site: https://charles-agyekum.github.io
 
@@ -29,10 +29,10 @@ The Strategic Default Pressure Index comes first. It is built on my own cocoa cr
 
 ## How it is built
 
-Plain HTML and CSS, with no build step. The fonts, Hanken Grotesk and JetBrains Mono, load from Google Fonts. A small inline script runs the hero animation and the number count-up, and every page still reads without JavaScript.
+Plain HTML and CSS, with no build step. The fonts, Hanken Grotesk and JetBrains Mono, are self-hosted in `assets/fonts/` under the SIL Open Font Licence. A small inline script runs the hero animation and the number count-up, and every page still reads without JavaScript.
 
 My CV, letters and dashboards share one visual style, which was first drawn from these pages in July 2026.
 
 ## Method
 
-I clean the data first and log each change. Every headline figure is checked against its source before a piece counts as done, and each piece ends on a recommendation.
+I clean the data first and log each change. Every headline figure is verified against its source before a piece counts as done, and each piece ends on a recommendation.
