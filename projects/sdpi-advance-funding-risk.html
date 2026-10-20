@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Strategic Default Pressure Index: advance-funding risk &middot; Charles Agyekum</title>
-<meta name="description" content="Counterparty default-risk on a real cocoa season, 2022/23. A 6.00% default-incentive threshold, delivery recovery worked from 80.0% to 94.7%, and exposure concentrated in 4 of 36 counterparties. Runnable.">
+<meta name="description" content="Counterparty default risk on one cocoa season, 2022/23. A 6.00% default threshold, delivery recovery lifted from 80.0% to 94.7%, and half the exposure in 4 of 36 clerks. Runnable in Python.">
 <meta name="author" content="Charles Agyekum">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Strategic Default Pressure Index &middot; Charles Agyekum">
-<meta property="og:description" content="Counterparty default-risk on a real cocoa season: a 6.00% threshold, recovery worked to 94.7%, exposure concentrated in 4 of 36 counterparties.">
+<meta property="og:description" content="Counterparty default risk on one cocoa season: a 6.00% default threshold, recovery lifted to 94.7%, and half the exposure in 4 of 36 clerks.">
 <meta property="og:url" content="https://charles-agyekum.github.io/projects/sdpi-advance-funding-risk.html">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -92,7 +92,7 @@ html{scroll-behavior:smooth}body{margin:0}
   <!-- utility bar -->
   <div style="background:#f1f1f1;border-bottom:1px solid #e3e3e3;">
     <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;align-items:center;font:600 13px 'Hanken Grotesk';color:#555;">
-      <span>Counterparty credit risk &middot; Python &middot; one real season</span>
+      <span>Counterparty credit risk &middot; Python &middot; one cocoa season</span>
       <span class="pp-nav" style="display:flex;gap:26px;"><a href="https://charles-agyekum.github.io/" style="color:#555;text-decoration:none;">All work</a><a href="https://charles-agyekum.github.io/#approach" style="color:#555;text-decoration:none;">Approach</a><a href="https://charles-agyekum.github.io/#contact" style="color:#555;text-decoration:none;">Contact</a></span>
     </div>
   </div>
@@ -119,7 +119,7 @@ html{scroll-behavior:smooth}body{margin:0}
       <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">Python &middot; Counterparty credit risk &middot; Flagship</div>
       <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">Strategic Default Pressure Index<span style="color:var(--acc-lt);">.</span></h1>
       <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
-        <span><span style="color:var(--acc-lt);">Method</span> &nbsp;Python, pandas, deterministic de-identification</span><span style="opacity:.4;">/</span>
+        <span><span style="color:var(--acc-lt);">Method</span> &nbsp;Python, panel reconstruction</span><span style="opacity:.4;">/</span>
         <span><span style="color:var(--acc-lt);">Data</span> &nbsp;One cocoa district, 2022/23: 36 clerks, 16 weeks, my own book</span><span style="opacity:.4;">/</span>
         <span><span style="color:var(--acc-lt);">Built</span> &nbsp;2026</span>
       </div>
@@ -152,7 +152,7 @@ html{scroll-behavior:smooth}body{margin:0}
             </div>
           </div>
 
-          <div class="ctx"><b>One cocoa district, 2022/23 season.</b> 36 purchasing clerks funded against future delivery over 16 weeks (16 Sep to 30 Dec 2022), reconstructed from three dated risk reports on the author's own book. The exposure was carried personally, under bond.</div>
+          <div class="ctx"><b>One cocoa district, 2022/23 season.</b> 36 purchasing clerks funded against future delivery over 16 weeks (16 Sep to 30 Dec 2022), rebuilt from three dated risk reports on my own book. I carried the exposure personally, under bond.</div>
 
           <div class="tiles">
             <div class="tile"><div class="n g">94.7%</div><div class="c">delivery recovery at season close, up from 80.0% at the opening report</div></div>
@@ -184,8 +184,8 @@ html{scroll-behavior:smooth}body{margin:0}
               </svg>
             </div>
             <div class="card">
-              <h2>Exposure was concentrated, not spread</h2>
-              <p class="sub">Cumulative share of the open gap as clerks are ranked by position. A uniform funding policy would misprice almost all of them.</p>
+              <h2>Four clerks carried half the exposure</h2>
+              <p class="sub">Cumulative share of the open gap, with clerks ranked by position. One funding policy for all 36 would misprice almost all of them.</p>
               <svg viewBox="0 0 460 232" role="img" aria-label="Concentration curve: 4 of 36 clerks carry 50 percent, 9 carry 80 percent">
                 <line class="grid" x1="55" y1="110" x2="435" y2="110"/>
                 <line class="grid" x1="55" y1="56" x2="435" y2="56" stroke-dasharray="4 4"/>
@@ -222,16 +222,16 @@ html{scroll-behavior:smooth}body{margin:0}
             </table>
           </div>
 
-          <div class="market"><b>Where the pressure comes from.</b> Ghana's price is fixed by COCOBOD at GHS 800 a bag, so there is no domestic spot market to sell into. The pressure is cross-border: Cote d'Ivoire farmgate ran near $1.33/kg against Ghana's $0.89 to $1.25/kg as the cedi fell about 27% in 2022, a gap that ran several times the 6.00% threshold. That is the season Ghana lost volume to smuggling.</div>
+          <div class="market"><b>Where the pressure came from.</b> COCOBOD fixed Ghana's price at GHS 800 a bag, so there was no domestic spot market to sell into. The pressure came from across the border. Côte d'Ivoire's farmgate price was about $1.33/kg against Ghana's $0.89 to $1.25/kg as the cedi fell about 27% in 2022, a gap of several times the 6.00% threshold. Ghana lost volume to smuggling that season.</div>
 
           <div class="dbfoot">
             <div class="rule"></div>
-            <b style="color:var(--ink)">Method:</b> Python, panel reconstruction, incentive-threshold derivation. Figures in GHS, so the 48 &divide; 800 threshold is exact in that unit.
+            <b style="color:var(--ink)">Method:</b> Python, panel reconstruction and the default threshold worked out from the bag price. Figures are in GHS.
           </div>
 
         </div>
       </div>
-      <div style="margin:-18px 0 30px;font:600 13px 'JetBrains Mono';color:#7e828d;text-align:center;">Strategic Default Pressure Index &middot; counterparty default-risk on a real cocoa season</div>
+      <div style="margin:-18px 0 30px;font:600 13px 'JetBrains Mono';color:#7e828d;text-align:center;">Strategic Default Pressure Index &middot; counterparty default risk on one cocoa season</div>
     </div>
   </section>
 
@@ -239,10 +239,10 @@ html{scroll-behavior:smooth}body{margin:0}
   <section style="background:#fff;">
     <div style="max-width:900px;margin:0 auto;padding:64px 32px 40px;">
       <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);">What it found</div>
-      <h2 style="font:800 34px/1.1 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 26px;">From booking losses to pricing the incentive that causes them<span style="color:var(--acc-b);">.</span></h2>
-      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">When you fund a delivery before it exists, the counterparty decides whether to deliver on economics you can see in advance. The index makes that explicit: a supplier who takes the advance and sells elsewhere forfeits what is withheld against the bag, GHS 48 on a GHS 800 bag in 2022/23, so default becomes rational the moment the market pays more than <b>6.00%</b> over the advance.</p>
-      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">Across three dated reports the open gap was worked from 297 bags to 111, delivery recovery rising from 80.0% to 94.7%, and the season closed in net credit. The intra-season peak of 654 bags was closed by 83% while funding kept growing, which is the harder version of the problem.</p>
-      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 30px;">Exposure was carried, not spread: 4 of 36 clerks held half the open gap and 9 held 80%. A uniform funding policy would have mispriced almost all of them, which is why the policy behind the book was tiered by clerk. The model and the code are published in the open, so every figure here can be checked rather than taken on trust.</p>
+      <h2 style="font:800 34px/1.1 'Hanken Grotesk';letter-spacing:-.02em;margin:14px 0 26px;">What the index found<span style="color:var(--acc-b);">.</span></h2>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">A supplier funded against a future delivery decides whether to deliver on prices the lender can also see. One who takes the advance and sells elsewhere loses GHS 48 on a GHS 800 bag in 2022/23, so default pays once the market offers more than <b>6.00%</b> over the advance.</p>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 18px;">Across three dated reports the open gap fell from 297 bags to 111 and delivery recovery rose from 80.0% to 94.7%. The season closed in net credit. Open exposure peaked at 654 bags in late November and came down 83% from there, while funding kept growing.</p>
+      <p style="font:400 17px/1.7 'Hanken Grotesk';color:#3d3d3d;margin:0 0 30px;">Four of the 36 clerks held half the open gap, and nine held 80%. One funding policy for all of them would have mispriced almost every clerk, which is why the policy behind the book set a tier for each one. The model and the code are public, so anyone can check every figure here.</p>
       <a href="https://github.com/charles-agyekum/sdpi-advance-funding-risk" target="_blank" rel="noopener" class="pp-cta" style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;font:700 15px 'Hanken Grotesk';padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:11px;">Open the repository <span class="pp-ar">&#8599;</span></a>
     </div>
   </section>
@@ -254,7 +254,7 @@ html{scroll-behavior:smooth}body{margin:0}
         <div style="width:42px;height:42px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 16px 'Hanken Grotesk';color:#fff;">CA</div>
         <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
       </a>
-      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:64ch;">The SDPI runs on operational records from my own cocoa franchise. Figures verified against source. Part-Qualified ACCA &middot; nine years commodity supply-chain finance.</div>
+      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:64ch;">The SDPI uses operational records from my own cocoa franchise, and every figure is checked against source. Part-Qualified ACCA &middot; nine years in procurement finance.</div>
     </div>
   </footer>
 
