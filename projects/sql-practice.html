@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SQL Practice: Joins, Subqueries &amp; CASE, Charles Agyekum</title>
-<meta name="description" content="A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
+<title>SQL practice: joins, subqueries &amp; CASE, Charles Agyekum</title>
+<meta name="description" content="A worked set of 31 SQL questions on joins (inner, left and the rest), subqueries and CASE logic, with the query files and a reference cheat sheet.">
 <meta name="author" content="Charles Agyekum">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SQL Practice: Joins, Subqueries &amp; CASE, Charles Agyekum">
-<meta property="og:description" content="A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files a">
+<meta property="og:title" content="SQL practice: joins, subqueries &amp; CASE, Charles Agyekum">
+<meta property="og:description" content="A worked set of 31 SQL questions on joins (inner, left and the rest), subqueries and CASE logic, with the query files and a reference cheat sheet.">
 <meta property="og:url" content="https://charles-agyekum.github.io/projects/sql-practice.html">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE0IiBmaWxsPSIjMUY2QjRGIi8+PHRleHQgeD0iNTAiIHk9IjY4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -64,7 +64,7 @@
     <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 85% 20%,var(--acc-glow,rgba(31,107,79,.24)),transparent 55%),radial-gradient(90% 90% at 8% 100%,var(--acc-glow2,rgba(31,107,79,.18)),transparent 60%),linear-gradient(180deg,rgba(8,9,13,.4),rgba(8,9,13,.8));"></div>
     <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 70px;">
       <div style="font:700 12px 'JetBrains Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);animation:ppFade .6s .05s forwards;">SQL Server · Practice set</div>
-      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">SQL Practice: Joins, Subqueries &amp; CASE<span style="color:var(--acc-lt);">.</span></h1>
+      <h1 style="font:800 58px/1.02 'Hanken Grotesk';letter-spacing:-.025em;margin:18px 0 0;animation:ppFade .7s .1s forwards;">SQL practice: joins, subqueries &amp; CASE<span style="color:var(--acc-lt);">.</span></h1>
       <div style="font:600 15px 'Hanken Grotesk';color:#aeb2bd;margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap;animation:ppFade .7s .18s forwards;">
         <span><span style="color:var(--acc-lt);">Tool</span> &nbsp;SQL Server</span><span style="opacity:.4;">/</span>
         <span><span style="color:var(--acc-lt);">Dataset</span> &nbsp;31 worked problems + reference cheat sheet</span><span style="opacity:.4;">/</span>
@@ -123,7 +123,7 @@
       <div style="min-width:0;">
         <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:0 0 14px;">What this is</h2>
         
-          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">A worked set of 31 SQL questions covering the core of analytical querying: joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files and a reference cheat sheet are kept together so the working is visible, not just the answers.</p>
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">A worked set of 31 SQL questions on joins (inner, left and the rest), subqueries, and CASE logic for banding and recoding. The query files sit with a reference cheat sheet, so each answer shows its working.</p>
         
 
         <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Coverage</h2>
@@ -136,17 +136,17 @@
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">2</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Subqueries:</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">for filtering and for derived values.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Subqueries</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">used to filter rows and to build derived values.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">3</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">CASE:</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">banding continuous values and recoding categories.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">CASE statements</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">that band continuous values and recode categories.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">4</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">Cheat sheet,</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">kept as a quick reference alongside the query files.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">A cheat sheet</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">kept as a quick reference beside the query files.</span>
             </li>
           
         </ol>
@@ -155,13 +155,13 @@
 
         <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">How it connects</h2>
         
-          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">This is the grounding under the dashboards. The 1/0-flag-to-rate move in the HR Attrition piece is the spreadsheet version of AVG(flag); the measures in the Power BI builds are the same aggregation logic in DAX. SQL is where that thinking was drilled first.</p>
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 16px;">The SQL set uses the same logic as the dashboards. In the HR Attrition piece, averaging a column of 1/0 flags gives a rate, which is the spreadsheet form of AVG(flag). The Power BI measures do the same aggregation in DAX.</p>
         
 
         <!-- recommendation callout -->
         <div style="margin:26px 0 0;border-left:4px solid var(--acc-a);background:linear-gradient(100deg,rgba(31,107,79,.06),rgba(31,107,79,.10));padding:26px 30px;">
           <div style="font:700 12px 'JetBrains Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--acc-a);margin-bottom:9px;">On the list</div>
-          <p style="font:600 19px/1.55 'Hanken Grotesk';color:#1a1a1a;margin:0;">A second, larger SQL showcase built on a single richer dataset is planned, to sit alongside this practice set.</p>
+          <p style="font:600 19px/1.55 'Hanken Grotesk';color:#1a1a1a;margin:0;">A second, larger SQL project on one richer dataset is planned, to sit beside this practice set.</p>
         </div>
 
         
@@ -202,7 +202,7 @@
   <!-- closing -->
   <section style="background:linear-gradient(95deg,var(--acc-a),var(--acc-b));color:#fff;">
     <div style="max-width:1200px;margin:0 auto;padding:34px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-      <div style="font:700 26px 'Hanken Grotesk';letter-spacing:-.01em;">Every headline figure on this page is verified against source.</div>
+      <div style="font:700 26px 'Hanken Grotesk';letter-spacing:-.01em;">I verified every headline figure on this page against its source.</div>
       <a href="https://charles-agyekum.github.io/" class="pp-ghost" style="border:1.5px solid rgba(255,255,255,.7);color:#fff;font:700 14px 'Hanken Grotesk';text-decoration:none;display:inline-flex;align-items:stretch;"><span style="padding:13px 22px;display:flex;align-items:center;">Explore more work</span><span style="padding:13px 16px;border-left:1.5px solid currentColor;display:flex;align-items:center;"><span class="pp-ar">→</span></span></a>
     </div>
   </section>
@@ -214,7 +214,7 @@
         <div style="width:40px;height:40px;background:var(--acc-a);display:flex;align-items:center;justify-content:center;font:800 15px 'Hanken Grotesk';color:#fff;">CA</div>
         <div style="font:700 16px 'Hanken Grotesk';color:#fff;">Charles Agyekum</div>
       </div>
-      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:60ch;">Public learning datasets unless stated. Figures verified against source. Built as part of a structured analytics programme, 2026.</div>
+      <div style="font:400 14px/1.6 'Hanken Grotesk';color:#8b8f9c;max-width:60ch;">Public learning datasets unless stated otherwise, with figures checked against source. Built during a structured analytics programme in 2026.</div>
     </div>
   </footer>
 
