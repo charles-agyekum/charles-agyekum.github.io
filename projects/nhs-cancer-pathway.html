@@ -108,7 +108,7 @@
   <span class="kw">CAST</span>(100.0 * <span class="kw">SUM</span>(<span class="kw">CASE WHEN</span> <span class="kw">DATEDIFF</span>(day, Referral_Date, Treatment_Start_Date) &gt; 62
       <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) / <span class="kw">COUNT</span>(*) <span class="kw">AS DECIMAL</span>(5,1)) <span class="kw">AS</span> Breach_Rate_Pct
 <span class="kw">FROM</span> CancerPathway;
-<span class="cm">-- 99.2% within standard vs the 85% target, comfortably on target.</span></pre>
+<span class="cm">-- Returns 500 pathways and 4 breaches, a breach rate of 0.8%: 99.2% treated within 62 days, against the 85% target.</span></pre>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0;">
         <div style="border:1px solid #e6e6e2;padding:22px 24px;">

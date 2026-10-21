@@ -136,7 +136,7 @@
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
               <span style="position:absolute;left:0;top:0;width:34px;height:34px;border:1.5px solid var(--acc-a);color:var(--acc-a);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 14px 'Hanken Grotesk';">1</span>
-              <span style="font:700 17px 'Hanken Grotesk';color:#111;">QA first.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">A =UNIQUE() pass on every categorical column before building anything. It found seven data quality issues, listed below.</span>
+              <span style="font:700 17px 'Hanken Grotesk';color:#111;">QA first.</span> <span style="font:400 17px/1.6 'Hanken Grotesk';color:#4a4a4a;">A =UNIQUE() pass on every categorical column before building anything. It found six data quality issues, listed below.</span>
             </li>
           
             <li style="position:relative;padding:0 0 18px 50px;counter-increment:step;">
@@ -153,14 +153,14 @@
 
         
           <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.015em;margin:40px 0 16px;">Cleaning first</h2>
-          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 18px;">The =UNIQUE() pass found seven data quality issues. The easiest to miss was the quantity column, which stored “One” and “Two” as text. It looks fine on screen but breaks every total, and Excel shows no error.</p>
+          <p style="font:400 18px/1.65 'Hanken Grotesk';color:#3f3f3f;margin:0 0 18px;">The =UNIQUE() pass found six data quality issues. The easiest to miss was the quantity column, which stored “One” and “Two” as text. It looks fine on screen but breaks every total, and Excel shows no error.</p>
           <div style="border:1px solid #e6e6e2;overflow:hidden;">
             <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;background:#0c0c0e;color:#fff;font:700 12px 'Hanken Grotesk';letter-spacing:.06em;text-transform:uppercase;">
               <div style="padding:12px 16px;">Issue</div><div style="padding:12px 16px;">Where</div><div style="padding:12px 16px;">Fix</div><div style="padding:12px 16px;">Why it mattered</div>
             </div>
             
               <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
-                <div style="padding:12px 16px;font-weight:700;color:#111;">Trailing space in header</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">Channel </div><div style="padding:12px 16px;">Retyped</div><div style="padding:12px 16px;">Broke pivot &amp; slicer field matching</div>
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Trailing space in header</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">Channel </div><div style="padding:12px 16px;">=LEN()−LEN(TRIM()) proved it; retyped</div><div style="padding:12px 16px;">Broke pivot &amp; slicer field matching</div>
               </div>
             
               <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
@@ -180,7 +180,7 @@
               </div>
             
               <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;border-top:1px solid #ededed;font:400 14px/1.45 'Hanken Grotesk';color:#3f3f3f;">
-                <div style="padding:12px 16px;font-weight:700;color:#111;">Hidden space confirmed</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">header</div><div style="padding:12px 16px;">=LEN()−LEN(TRIM())</div><div style="padding:12px 16px;">Proved the space before fixing it</div>
+                <div style="padding:12px 16px;font-weight:700;color:#111;">Case inconsistency</div><div style="padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;color:var(--acc-a);">ship-city spellings</div><div style="padding:12px 16px;">PROPER</div><div style="padding:12px 16px;">Tidy grouping; city is not in the six questions</div>
               </div>
             
           </div>
