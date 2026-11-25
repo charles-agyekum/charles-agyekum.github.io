@@ -4,7 +4,7 @@ Live site: https://charles-agyekum.github.io
 
 A static portfolio with one landing page and seven project pages. It also links to two pieces that live in their own public repos, so there are nine project cards in all.
 
-The Strategic Default Pressure Index comes first. It is built on my own cocoa credit book. The other pieces use public datasets and show the method in Excel, Power BI, SQL and Python.
+The Strategic Default Pressure Index comes first. It is built on my own cocoa credit book. The other pieces show the method in Excel, Power BI, SQL and Python.
 
 ## What is here
 
@@ -13,12 +13,12 @@ The Strategic Default Pressure Index comes first. It is built on my own cocoa cr
 | Strategic Default Pressure Index (lead) | Python | On my own cocoa book, default pays above a 6.00% premium. [Public repo](https://github.com/charles-agyekum/sdpi-advance-funding-risk) |
 | DataCo supply chain: late delivery & OTIF risk | Power BI | 54.8% of orders late; First Class 95% late against 38% for Standard; $2.14M of profit at risk |
 | DataCo late delivery, rebuilt in pandas | Python | The same finding in code. [Notebook repo](https://github.com/charles-agyekum/dataco-late-delivery-pandas) |
-| NHS cancer pathway: the 62-day standard | SQL | Training data measured against NHS England's 62-day standard, with the data's limits set out |
+| NHS cancer pathway: the 62-day standard | SQL | 500 pathways measured against NHS England's 62-day standard, with the data's limits set out |
 | Superstore: order fulfilment & profitability | Power BI | £12.6M sales at an 11.6% margin; Tables lose £64,083 at a 29% discount |
-| Vrinda Store: 2022 sales dashboard | Excel | 31,047 orders cleaned, with 7 data quality issues caught; women drive 64% of revenue |
+| Vrinda Store: 2022 sales dashboard | Excel | 31,047 orders cleaned, with 6 data quality issues caught; women drive 64% of revenue |
 | HR employee attrition: dynamic dashboard | Excel | Attrition checked at 16.12% |
 | Adidas US: interactive sales dashboard | Excel | 9,648 rows; 3 of 6 retailers hold about 72% of c.$900M |
-| SQL practice: joins, subqueries & CASE | SQL | 31 worked questions |
+| SQL: joins, subqueries & CASE | SQL | 31 worked queries |
 
 ## Files
 
